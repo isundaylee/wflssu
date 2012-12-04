@@ -12,7 +12,7 @@ class MembersController < ApplicationController
 
     if @member.save 
       flash[:success] = "You have successfully created new member #{@member.name}. "
-      redirect_to members_url
+      redirect_to member_url(@member)
     else
       render 'new'
     end
@@ -26,7 +26,7 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
     if @member.update_attributes(params[:member])
       flash[:success] = "You have successfully updated profile for #{@member.name}. "
-      redirect_to members_url
+      redirect_to member_url(@member)
     else
       render 'edit'
     end
