@@ -61,3 +61,7 @@
     <td colspan="2"><%= markdown @member.memo %></td>
   </tr>
 </table>
+
+<p>
+  <%= link_to 'Edit Member Profile', edit_member_path(@member), class: 'btn btn-primary' %>
+</p>
