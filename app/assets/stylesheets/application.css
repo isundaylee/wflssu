@@ -53,8 +53,14 @@
 
 /* Offset the body to avoid collision with the nav bar. */
 
+#flashes-container {
+  margin-top: 20px; 
+  margin-bottom: 20px;
+}
+
 #main-container {
-  padding: 20px 0; 
+  margin-top: 20px; 
+  margin-bottom: 20px; 
   position: relative; 
 }
 
