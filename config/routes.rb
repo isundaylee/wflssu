@@ -1,4 +1,8 @@
 Su::Application.routes.draw do
+
+  resources :departments, only: [:new, :create, :edit, :update, :index] do
+  end
+
   get "pages/homepage"
 
   root :to => "pages#homepage"

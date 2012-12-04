@@ -1,0 +1,9 @@
+<%= render('error_messages', errors: department.errors.full_messages) %>
+
+<%= form_for(department, builder: MainFormBuilder, html: {class: 'form-regular'}) do |f| %>
+
+  <%= f.text_field :name, placeholder: 'Department name. ' %>
+
+  <%= f.submit submit_text %>
+
+<% end %>

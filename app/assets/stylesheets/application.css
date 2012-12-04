@@ -18,6 +18,14 @@
   text-align: center; 
 }
 
+.debug {
+  background-color: red; 
+}
+
+.table-centered th, .table-centered td {
+  text-align: center !important; 
+}
+
 /* Universal footer */
 
 .footer {
@@ -29,4 +37,26 @@
 .footer p {
   margin-bottom: 0;
   color: #777; 
+}
+
+/* Offset the body to avoid collision with the nav bar. */
+
+#main-container {
+  padding: 20px 0; 
+}
+
+/* Main form styles */
+
+.form-regular input {
+  width: 300px !important; 
+}
+
+.form-regular textarea {
+  width: 300px !important; 
+}
+
+/* Debug info styles */
+
+.debug_dump {
+  margin-top: 20px; 
 }
