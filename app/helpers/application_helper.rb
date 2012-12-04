@@ -10,7 +10,8 @@ module ApplicationHelper
       :strikethrough =>true
     }
     markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML, options)
-    markdown.render(h(text)).html_safe
+    code = "<div class=\"markdown\">" + markdown.render(h(text)) + "</div>"
+    code.html_safe
   end
 
 end
