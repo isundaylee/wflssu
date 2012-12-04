@@ -48,7 +48,7 @@
   </tr>
   <tr>
     <td>Email Address</td>
-    <td><%= link_to @member.email, 'mailto: ' + @member.email %></td>
+    <td><%= link_to(@member.email, 'mailto: ' + @member.email) unless @member.email.nil? %></td>
   </tr>
   <tr>
     <td>QQ</td>

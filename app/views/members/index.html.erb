@@ -30,7 +30,7 @@
         <td><%= member.admission_year %></td>
         <td><%= member.class_number %></td>
         <td><%= member.phone_number %></td>
-        <td><%= link_to member.email, 'mailto: ' + member.email %></td>
+        <td><%= link_to(member.email, 'mailto: ' + member.email) unless member.email.nil? %></td>
         <td><%= member.department.name %></td> 
         <td>
           <%= link_to 'Show', member_path(member), class: 'btn btn-mini' %>
