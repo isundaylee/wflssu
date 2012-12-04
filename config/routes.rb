@@ -1,6 +1,6 @@
 Su::Application.routes.draw do
 
-  resources :members, only: [:new, :create, :edit, :update, :index, :destroy] do 
+  resources :members, only: [:new, :create, :edit, :update, :index, :destroy, :show] do 
     member do
       get 'qrcode(/:size)', action: 'qrcode'
     end

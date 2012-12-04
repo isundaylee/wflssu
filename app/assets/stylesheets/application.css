@@ -15,7 +15,11 @@
 /* Utility style */
 
 .center {
-  text-align: center; 
+  text-align: center !important; 
+}
+
+.center-block {
+  margin: 0 auto; 
 }
 
 .debug {
@@ -24,6 +28,14 @@
 
 .table-centered th, .table-centered td {
   text-align: center !important; 
+}
+
+.block {
+  display: block; 
+}
+
+.inline-block {
+  display: inline-block; 
 }
 
 /* Universal footer */
@@ -43,6 +55,7 @@
 
 #main-container {
   padding: 20px 0; 
+  position: relative; 
 }
 
 /* Main form styles */

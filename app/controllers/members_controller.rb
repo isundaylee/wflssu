@@ -1,4 +1,5 @@
 class MembersController < ApplicationController
+  QRCODE_DEFAULT_SIZE = 150
 
   around_filter :rescue_member_not_found
 
@@ -44,11 +45,16 @@ class MembersController < ApplicationController
 
   def qrcode
     require 'cgi'
-    size = params[:size] || 150
+    size = params[:size] || QRCODE_DEFAULT_SIZE 
     @member = Member.find(params[:id])
     text = "http://www.wflssu.com/proxy.php?action=su_show_user&id=#{@member.code_number}"
     url = "https://chart.googleapis.com/chart?chs=#{size}x#{size}&cht=qr&chl=#{CGI.escape(text)}"
     redirect_to url
+  end
+
+  def show
+    @member = Member.find(params[:id])
+
   end
 
   private
