@@ -42,6 +42,15 @@ class MembersController < ApplicationController
     redirect_to members_url
   end
 
+  def qrcode
+    require 'cgi'
+    size = params[:size] || 150
+    @member = Member.find(params[:id])
+    text = "http://www.wflssu.com/proxy.php?action=su_show_user&id=#{@member.code_number}"
+    url = "https://chart.googleapis.com/chart?chs=#{size}x#{size}&cht=qr&chl=#{CGI.escape(text)}"
+    redirect_to url
+  end
+
   private
 
     def rescue_member_not_found
