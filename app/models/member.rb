@@ -24,7 +24,6 @@ class Member < ActiveRecord::Base
   validates :email, allow_blank: true, length: {in: 5..50}, format: {with: EMAIL_REGEXP}
   validates :gender, presence: true, inclusion: GENDERS.keys
   validates :qq, allow_blank: true, length: {in: 5..15}, numericality: {only_integer: true}
-  validates :birthday, presence: {message: 'isn\'t valid'}
   validates_associated :department
   validates :secondary_school, allow_blank: true, length: {in: 1..100}
   validates :code_number, presence: true, length: {is: 7}, numericality: {only_integer: true}, uniqueness: true
