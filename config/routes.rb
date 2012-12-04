@@ -1,5 +1,8 @@
 Su::Application.routes.draw do
 
+  resources :members, only: [:new, :create, :edit, :update, :index, :destroy] do 
+  end
+
   resources :departments, only: [:new, :create, :edit, :update, :index] do
   end
 

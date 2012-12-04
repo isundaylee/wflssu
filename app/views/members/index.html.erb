@@ -1,0 +1,52 @@
+<h1 class="center">Members List</h1>
+
+<br />
+
+<% if @members.empty? %>
+
+  <p class="center">There are currently no members. </p>
+
+<% else %>
+
+  <table class="table table-bordered table-centered">
+
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Gender</th>
+      <th>Year</th>
+      <th>Class</th>
+      <th>Phone Number</th>
+      <th>Email</th>
+      <th>Department</th>
+      <th>Actions</th>
+    </tr>
+
+    <% @members.each do |member| %>
+      <tr>
+        <td><%= member.code_number %></td>
+        <td><%= member.name %></td>
+        <td><%= Member::GENDERS[member.gender] %></td>
+        <td><%= member.admission_year %></td>
+        <td><%= member.class_number %></td>
+        <td><%= member.phone_number %></td>
+        <td><%= link_to member.email, 'mailto: ' + member.email %></td>
+        <td><%= member.department.name %></td> 
+        <td>
+          <%= link_to 'Show', member_path(member), class: 'btn btn-mini' %>
+          <%= link_to 'Edit', edit_member_path(member), class: 'btn btn-mini' %>
+          <%= link_to 'Delete', member_path(member), method: :delete, confirm: "Do you really want to delete #{member.name}? ", class: 'btn btn-mini btn-dangerous' %>
+        </td>
+      </tr>
+    <% end %>
+
+  </table>
+
+<% end %>
+
+<br />
+
+<p class="center">
+  <%= link_to 'Create New Member', new_member_path, class: 'btn btn-primary center-block' %>
+</p>
+

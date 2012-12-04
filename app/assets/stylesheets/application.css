@@ -29,7 +29,7 @@
 /* Universal footer */
 
 .footer {
-  padding: 70px 0;
+  padding: 30px 0;
   border-top: 1px solid #e5e5e5;
   background-color: #f5f5f5; 
 }
@@ -53,6 +53,10 @@
 
 .form-regular textarea {
   width: 300px !important; 
+}
+
+.form-regular select {
+  width: 315px !important; 
 }
 
 /* Debug info styles */

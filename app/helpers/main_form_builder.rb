@@ -16,6 +16,10 @@ class MainFormBuilder < ActionView::Helpers::FormBuilder
     return wrap_field(super(value, options.merge({class: 'btn btn-primary btn-large'})), options)
   end
 
+  def collection_select(method, collection, value_method, text_method, options = {}, html_options = {})
+    return wrap_field(super(method, collection, value_method, text_method, options, html_options))
+  end
+
   private
   
     def wrap_field(field, options ={})

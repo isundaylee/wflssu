@@ -12,14 +12,12 @@
     <div class="navbar-inner">
       <div class="container">
         <%= link_to 'WFLSSU', root_path, class: 'brand' %>
-        <ul class="nav">
-          <li><%= link_to 'Hello', '#' %></li>
-        </ul>
         <ul class="nav pull-right">
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administration <b class="caret"></b></a>
             <ul class="dropdown-menu">
               <li><%= link_to 'Departments', departments_path %></li>
+              <li><%= link_to 'Members', members_path %></li>
             </ul>
           </li>
         </ul>
@@ -43,7 +41,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p class="center">Designed and implemented by Jiahao Li. </p>
+      <p class="center"><small>Copyright &copy; 2012 Wuhan Foreign Languages School Student Union. All rights reserved. <small></p>
     </div>
   </footer>
 
