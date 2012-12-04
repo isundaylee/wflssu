@@ -1,4 +1,8 @@
 Su::Application.routes.draw do
+  get "pages/homepage"
+
+  root :to => "pages#homepage"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

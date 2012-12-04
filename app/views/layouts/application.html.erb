@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Su</title>
+  <title>WFLS Student Union</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="<%= "#{params[:controller]}_#{params[:action]}" %>">
 
-<%= yield %>
+  <div class="navbar navbar-inverse navbar-static-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to 'WFLSSU', root_path, class: 'brand' %>
+        <ul class="nav">
+          <li><%= link_to 'Hello', '#' %></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li><%= link_to 'Welcome', '#' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="main_controller">
+    <div class="row">
+      <div class="span12">
+        <% flash.each do |key, value| %>
+          <% next unless ['success', 'warning', 'info', 'error'].include?(key.to_s) %>
+          <div class="alert alert-<%= key.to_s %>">
+            <%= value %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <%= yield %>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p class="center">Designed and implemented by Jiahao Li. </p>
+    </div>
+  </footer>
+
+  <div class="container">
+    <%= debug(params) %>
+  </div>
 
 </body>
 </html>
