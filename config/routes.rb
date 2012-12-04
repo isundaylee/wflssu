@@ -2,7 +2,7 @@ Su::Application.routes.draw do
 
   resources :members, only: [:new, :create, :edit, :update, :index, :destroy, :show] do 
     member do
-      get 'qrcode(/:size)', action: 'qrcode'
+      get 'qrcode(/:size)', action: 'qrcode', as: 'qrcode'
     end
   end
 
