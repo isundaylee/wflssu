@@ -12,6 +12,11 @@ gem 'sqlite3'
 gem 'redcarpet'
 gem 'coderay'
 
+# Javascript runtime
+
+gem 'execjs'
+gem 'therubyracer'
+
 # Gems for member authentication
 
 gem 'bcrypt-ruby', '~> 3.0.0'
