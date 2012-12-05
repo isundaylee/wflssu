@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121204151113) do
+ActiveRecord::Schema.define(:version => 20121205150730) do
 
   create_table "departments", :force => true do |t|
     t.string   "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20121204151113) do
     t.string   "remember_token"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "privilege"
   end
 
 end
