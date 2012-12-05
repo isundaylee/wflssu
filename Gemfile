@@ -17,6 +17,10 @@ gem 'coderay'
 gem 'execjs'
 gem 'therubyracer'
 
+# Gem needed in the compilation of therubyracer
+
+gem 'libv8', '~> 3.11.8'
+
 # Gems for member authentication
 
 gem 'bcrypt-ruby', '~> 3.0.0'
