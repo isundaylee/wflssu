@@ -68,7 +68,7 @@
   <% end %>
 </table>
 
-<% if signed_in_as_vice_dpresident? @member.department %>
+<% if signed_in_as_vice_president? %>
   <p class="center">
     <%= link_to 'Edit Member Profile', edit_member_path(@member), class: 'btn btn-primary' %>
   </p>
