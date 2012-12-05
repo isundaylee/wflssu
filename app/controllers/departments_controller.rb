@@ -1,4 +1,7 @@
 class DepartmentsController < ApplicationController
+
+  before_filter :require_vice_president, only: [:new, :create, :edit, :update, :index]
+
   def new
     @department = Department.new
   end

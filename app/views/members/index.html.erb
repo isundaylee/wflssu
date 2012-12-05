@@ -34,11 +34,26 @@
         <td><%= member.class_number %></td>
         <td><%= member.phone_number %></td>
         <td><%= link_to(member.email, 'mailto: ' + member.email) unless member.email.nil? %></td>
-        <td><%= member.department.name %></td> 
+        <td>
+          <%= member.department.name %>
+          <% if member.privilege == Member::VICE_DPRESIDENT_PRIVILEGE %>
+            *
+          <% elsif member.privilege == Member::DPRESIDENT_PRIVILEGE %>
+            **
+          <% elsif member.privilege == Member::VICE_PRESIDENT_PRIVILEGE %>
+            #
+          <% elsif member.privilege == Member::PRESIDENT_PRIVILEGE %>
+            ##
+          <% elsif member.privilege == Member::ADMINISTRATOR_PRIVILEGE %>
+            @
+          <% end %>
+        </td> 
         <td>
           <%= link_to 'Show', member_path(member), class: 'btn btn-mini' %>
-          <%= link_to 'Edit', edit_member_path(member), class: 'btn btn-mini' %>
-          <%= link_to 'Delete', member_path(member), method: :delete, confirm: "Do you really want to delete #{member.name}? ", class: 'btn btn-mini btn-dangerous' %>
+          <% if signed_in_as_vice_president? %>
+            <%= link_to 'Edit', edit_member_path(member), class: 'btn btn-mini' %>
+            <%= link_to 'Delete', member_path(member), method: :delete, confirm: "Do you really want to delete #{member.name}? ", class: 'btn btn-mini btn-dangerous' %>
+          <% end %>
         </td>
       </tr>
     <% end %>
@@ -49,11 +64,13 @@
 
 <br />
 
-<p class="center">
-  <% if @department %>
-    <%= link_to 'Create New Member', new_department_member_path(@department), class: 'btn btn-primary' %>
-  <% else %>
-    <%= link_to 'Create New Member', new_member_path, class: 'btn btn-primary center-block' %>
-  <% end %>
-</p>
+<% if signed_in_as_vice_president? %>
+  <p class="center">
+    <% if @department %>
+      <%= link_to 'Create New Member', new_department_member_path(@department), class: 'btn btn-primary' %>
+    <% else %>
+      <%= link_to 'Create New Member', new_member_path, class: 'btn btn-primary center-block' %>
+    <% end %>
+  </p>
+<% end %>
 

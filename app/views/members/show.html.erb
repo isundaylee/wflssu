@@ -29,39 +29,47 @@
     <td><%= @member.department.name %></td>
   </tr>
   <tr>
-    <th colspan="2" class="center">Personal Information</th>
+    <td>Post</td>
+    <td><%= Member::PRIVILEGES[@member.privilege] %></td>
   </tr>
-  <tr>
-    <td>Birthday</td>
-    <td><%= @member.birthday %></td>
-  </tr>
-  <tr>
-    <td>Secondary School</td>
-    <td><%= @member.secondary_school %></td>
-  </tr>
-  <tr>
-    <th colspan="2" class="center">Contact Information</th>
-  </tr>
-  <tr>
-    <td>Phone Number</td>
-    <td><%= @member.phone_number %></td>
-  </tr>
-  <tr>
-    <td>Email Address</td>
-    <td><%= link_to(@member.email, 'mailto: ' + @member.email) unless @member.email.nil? %></td>
-  </tr>
-  <tr>
-    <td>QQ</td>
-    <td><%= @member.qq %></td>
-  </tr>
+  <% if signed_in? %>
     <tr>
-    <th colspan="2" class="center">Profile Memo</th>
-  </tr>
-  <tr>
-    <td colspan="2"><%= markdown @member.memo %></td>
-  </tr>
+      <th colspan="2" class="center">Personal Information</th>
+    </tr>
+    <tr>
+      <td>Birthday</td>
+      <td><%= @member.birthday %></td>
+    </tr>
+    <tr>
+      <td>Secondary School</td>
+      <td><%= @member.secondary_school %></td>
+    </tr>
+    <tr>
+      <th colspan="2" class="center">Contact Information</th>
+    </tr>
+    <tr>
+      <td>Phone Number</td>
+      <td><%= @member.phone_number %></td>
+    </tr>
+    <tr>
+      <td>Email Address</td>
+      <td><%= link_to(@member.email, 'mailto: ' + @member.email) unless @member.email.nil? %></td>
+    </tr>
+    <tr>
+      <td>QQ</td>
+      <td><%= @member.qq %></td>
+    </tr>
+      <tr>
+      <th colspan="2" class="center">Profile Memo</th>
+    </tr>
+    <tr>
+      <td colspan="2"><%= markdown @member.memo %></td>
+    </tr>
+  <% end %>
 </table>
 
-<p class="center">
-  <%= link_to 'Edit Member Profile', edit_member_path(@member), class: 'btn btn-primary' %>
-</p>
+<% if signed_in_as_vice_dpresident? @member.department %>
+  <p class="center">
+    <%= link_to 'Edit Member Profile', edit_member_path(@member), class: 'btn btn-primary' %>
+  </p>
+<% end %>

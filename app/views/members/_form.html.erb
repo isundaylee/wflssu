@@ -13,6 +13,7 @@
   <%= f.text_field :qq, placeholder: 'QQ number. ' %>
   <%= f.text_field :birthday, placeholder: 'Birthday, DD/MM/YYYY. ' %>
   <%= f.collection_select :department_id, Department.names, :first, :last %>
+  <%= f.collection_select :privilege, Member::PRIVILEGES, :first, :last %>
   <%= f.text_field :secondary_school, placeholder: 'Secondary school name. ' %>
   <%= f.text_field :code_number, placeholder: 'Member code number. ' %>
   <%= f.text_area :memo, placeholder: 'Profile memo. ', rows: 10 %>

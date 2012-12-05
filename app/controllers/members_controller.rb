@@ -2,6 +2,8 @@ class MembersController < ApplicationController
   QRCODE_DEFAULT_SIZE = 150
 
   around_filter :rescue_record_not_found
+  before_filter :require_vice_president, only: [:new, :create, :edit, :upate, :destroy]
+  before_filter :require_membership, only: [:index]
 
   def new
     @member = Member.new
@@ -15,7 +17,13 @@ class MembersController < ApplicationController
   def create
     @member = Member.new(params[:member])
 
-    if @member.save 
+    if @member.privilege >= current_member.privilege
+      logger.debug '#'*20
+      logger.debug @member.privilege
+      @flash = {} 
+      @flash[:error] = "You don't have sufficient privilege. "
+      render 'new'
+    elsif @member.save 
       flash[:success] = "You have successfully created new member #{@member.name}. "
       if @member.birthday.nil?
         flash[:warning] = "The newly created member has no birthday profile. This may result from an incorrectly formed birthday input. "
@@ -32,11 +40,16 @@ class MembersController < ApplicationController
 
   def update
     @member = Member.find(params[:id])
-    if @member.update_attributes(params[:member])
+    is_current = true if params[:id].to_i == current_member.id
+
+    if params[:member][:privilege].to_i >= current_member.privilege
+      @flash = {}
+      @flash[:error] = "You don't have sufficient privilege. "
+      render 'edit'
+    elsif @member.update_attributes(params[:member])
       flash[:success] = "You have successfully updated profile for #{@member.name}. "
-      if @member.birthday.nil?
-        flash[:warning] = "The updated member has no birthday profile. This may result from an incorrectly formed birthday input. "
-      end
+      flash[:warning] = "The updated member has no birthday profile. This may result from an incorrectly formed birthday input. " if @member.birthday.nil?
+      sign_in @member if is_current
       redirect_to member_url(@member)
     else
       render 'edit'
