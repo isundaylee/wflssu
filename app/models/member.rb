@@ -35,6 +35,8 @@ class Member < ActiveRecord::Base
   validates :password, length: {in: 6..30, if: :password_changed?}
   validates :password_confirmation, presence: {if: :password_changed?}
 
+  before_save :create_remember_token
+
   def self.human_attribute_name(attr, options = {})
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
   end
@@ -52,6 +54,10 @@ class Member < ActiveRecord::Base
 
     def password_changed? 
       !self.password.blank?
+    end
+
+    def create_remember_token
+      self.remember_token = SecureRandom.urlsafe_base64
     end
 
 end

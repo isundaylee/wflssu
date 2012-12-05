@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="span6 offset3">
+    <div class="well">
+      <h1 class="center">Login</h1>
+
+      <%= render 'error_messages', errors: @errors %>
+
+      <%= form_for :session, url: session_path, builder: MainFormBuilder, html: {class: 'form-regular'} do |f| %>
+
+        <%= f.text_field :code_number, placeholder: 'Your ID. ' %>
+        <%= f.password_field :password, placeholder: 'Your password. ' %>
+
+        <%= f.submit 'Login' %>
+      
+      <% end %>
+
+    </div>
+  </div>
+</div>
