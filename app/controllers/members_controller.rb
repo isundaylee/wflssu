@@ -54,7 +54,7 @@ class MembersController < ApplicationController
     size = params[:size] || QRCODE_DEFAULT_SIZE 
     @member = Member.find(params[:id])
     text = "http://www.wflssu.com/proxy.php?action=su_show_user&id=#{@member.code_number}"
-    url = "https://chart.googleapis.com/chart?chs=#{size}x#{size}&cht=qr&chl=#{CGI.escape(text)}"
+    url = "http://api.qrserver.com/v1/create-qr-code/?size=#{size}x#{size}&data=#{CGI.escape(text)}"
     redirect_to url
   end
 
