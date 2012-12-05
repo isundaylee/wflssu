@@ -50,6 +50,10 @@
 <br />
 
 <p class="center">
-  <%= link_to 'Create New Member', new_member_path, class: 'btn btn-primary center-block' %>
+  <% if @department %>
+    <%= link_to 'Create New Member', new_department_member_path(@department), class: 'btn btn-primary' %>
+  <% else %>
+    <%= link_to 'Create New Member', new_member_path, class: 'btn btn-primary center-block' %>
+  <% end %>
 </p>
 

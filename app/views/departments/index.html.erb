@@ -12,17 +12,18 @@
 
     <tr>
       <th>ID</th>
-      <th>Name</th>
+      <th>Department Name</th>
       <th>Actions</th>
     </tr>
 
     <% @departments.each do |department| %>
       <tr>
-        <td style="width: 20%; "><%= department.id %></td>
+        <td style="width: 10%; "><%= department.id %></td>
         <td><%= department.name %></td>
-        <td style="width: 20%; ">
+        <td style="width: 25%; ">
           <%= link_to 'Edit', edit_department_path(department), class: 'btn btn-mini' %>
           <%= link_to 'Members', department_members_path(department), class: 'btn btn-mini' %>
+          <%= link_to 'New Member', new_department_member_path(department), class: 'btn btn-mini' %>
         </td>
       </tr>
     <% end %>

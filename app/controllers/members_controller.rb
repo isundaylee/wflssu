@@ -5,6 +5,11 @@ class MembersController < ApplicationController
 
   def new
     @member = Member.new
+    
+    if params[:department_id]
+      @department = Department.find(params[:department_id])
+      @member.department = @department
+    end
   end
 
   def create
@@ -69,6 +74,4 @@ class MembersController < ApplicationController
 
   private
 
-hh
-    
 end

@@ -10,7 +10,7 @@ Su::Application.routes.draw do
   end
 
   resources :departments, only: [:new, :create, :edit, :update, :index] do
-    resources :members, only: [:index]
+    resources :members, only: [:index, :new]
   end
 
   get "pages/homepage"
