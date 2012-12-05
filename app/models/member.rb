@@ -1,5 +1,5 @@
 class Member < ActiveRecord::Base
-  attr_accessible :admission_year, :birthday, :class_number, :code_number, :department_id, :email, :gender, :memo, :name, :password_digest, :phone_number, :qq, :remember_token, :secondary_school
+  attr_accessible :admission_year, :birthday, :class_number, :code_number, :department_id, :email, :gender, :memo, :name, :password_digest, :phone_number, :qq, :remember_token, :secondary_school, :password, :password_confirmation
 
   belongs_to :department
 
@@ -17,6 +17,8 @@ class Member < ActiveRecord::Base
     secondary_school: 'Secondary school name'
   }
 
+  has_secure_password
+
   validates :name, presence: true, length: {in: 2..10}
   validates :admission_year, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 2011, less_than_or_equal_to: 9999} 
   validates :class_number, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 20}
@@ -29,6 +31,9 @@ class Member < ActiveRecord::Base
   validates :code_number, presence: true, length: {is: 7}, numericality: {only_integer: true}, uniqueness: true
   validate :code_number_is_valid
   validates :memo, allow_blank: true, length: {maximum: 2000} 
+
+  validates :password, length: {in: 6..30, if: :password_changed?}
+  validates :password_confirmation, presence: {if: :password_changed?}
 
   def self.human_attribute_name(attr, options = {})
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
@@ -43,6 +48,10 @@ class Member < ActiveRecord::Base
           self.errors.add :code_number, 'doesn\'t match admission year. '
         end
       end
+    end
+
+    def password_changed? 
+      !self.password.blank?
     end
 
 end

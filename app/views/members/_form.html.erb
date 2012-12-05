@@ -3,6 +3,8 @@
 <%= form_for(member, builder: MainFormBuilder, html: {class: 'form-regular'}) do |f| %>
 
   <%= f.text_field :name, placeholder: 'Name. ' %>
+  <%= f.password_field :password, placeholder: 'Password. ' %>
+  <%= f.password_field :password_confirmation, placeholder: 'Password confirmation. ' %>
   <%= f.text_field :admission_year, placeholder: 'Admission year. ' %>
   <%= f.text_field :class_number, placeholder: 'Class number. ' %>
   <%= f.text_field :phone_number, placeholder: 'Phone number. ' %>
