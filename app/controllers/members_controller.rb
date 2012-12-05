@@ -1,7 +1,7 @@
 class MembersController < ApplicationController
   QRCODE_DEFAULT_SIZE = 150
 
-  around_filter :rescue_member_not_found
+  around_filter :rescue_record_not_found
 
   def new
     @member = Member.new
@@ -39,7 +39,12 @@ class MembersController < ApplicationController
   end
 
   def index
-    @members = Member.all
+    if params[:department_id]
+      @members = Member.where({department_id: params[:department_id]}).all
+      @department = Department.find(params[:department_id])
+    else
+      @members = Member.all
+    end
   end
 
   def destroy
@@ -64,11 +69,6 @@ class MembersController < ApplicationController
 
   private
 
-    def rescue_member_not_found
-      yield
-    rescue ActiveRecord::RecordNotFound
-      flash[:error] = "Invalid member. "
-      redirect_to members_url
-    end
+hh
     
 end

@@ -14,4 +14,13 @@ module ApplicationHelper
     code.html_safe
   end
 
+  # Handling RecordNotFound error
+  
+  def rescue_record_not_found
+    yield
+  rescue ActiveRecord::RecordNotFound
+    flash[:error] = "Invalid parameters. "
+    redirect_to root_url 
+  end
+
 end
