@@ -18,8 +18,6 @@ class MembersController < ApplicationController
     @member = Member.new(params[:member])
 
     if @member.privilege >= current_member.privilege
-      logger.debug '#'*20
-      logger.debug @member.privilege
       @flash = {} 
       @flash[:error] = "You don't have sufficient privilege. "
       render 'new'
