@@ -11,6 +11,7 @@ task :import_members => :environment do
     p[:class_number] = cls
     p[:phone_number] = phone
     p[:email] = email
+    p[:privilege] = 0
     if gender == 'M'
       puts 'M'
       p[:gender] = 1
@@ -33,6 +34,7 @@ task :import_members => :environment do
     p[:code_number] = id
     p[:memo] = ''
     user = Member.new(p)
+    user.password = user.password_confirmation = id
     if !user.valid?
       user.errors.full_messages.each do |msg|
         puts msg
