@@ -10,6 +10,7 @@ Su::Application.routes.draw do
 
     collection do
       get 'search'
+      get 'by_code_number/:code_number', action: 'member_by_code_number', as: 'by_code_number'
     end
   end
 

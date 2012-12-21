@@ -97,6 +97,19 @@ class MembersController < ApplicationController
     logger.debug Member.where('code_number = ?', id).all
   end
 
+  def member_by_code_number
+    code_number = params[:code_number]
+
+    user = Member.where('code_number = ?', code_number).first
+
+    if user
+      redirect_to user
+    else
+      flash[:error] = "There is no member with ID #{code_number}. "
+      redirect_to root_url
+    end
+  end
+
   private
 
 end
