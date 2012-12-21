@@ -85,6 +85,18 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
   end
 
+  def search
+    query = params[:query]
+
+    # Currently supports only searching by ID
+
+    id = query.to_i
+
+    @members = Member.where('code_number = ?', id).all
+
+    logger.debug Member.where('code_number = ?', id).all
+  end
+
   private
 
 end

@@ -25,6 +25,9 @@
               </ul>
             </li>
             <li><%= link_to 'Logout', session_path, method: :delete, confirm: 'Do you really want to log out? ' %></li>
+            <%= form_tag search_members_path, method: 'get', class: 'navbar-search' do %>
+              <%= text_field_tag 'query', '', class: 'search-query', placeholder: 'Search member by ID. ' %>
+            <% end %>
           <% else %>
             <li><%= link_to 'Login', new_session_path %></li>
           <% end %>
