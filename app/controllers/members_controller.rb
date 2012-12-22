@@ -86,37 +86,60 @@ class MembersController < ApplicationController
   end
 
   def search
+    def process_token(token, partial)
+      # Splitting the token
+      tokens = token.split(':')
+
+      # Extracting the search method, defaulting to searching by ID
+      method = tokens.size >= 2 ? tokens[0] : 'id'
+
+      # Reassembling the search query
+      query = tokens.size >= 2 ? tokens[1 ... tokens.size].join('') : tokens.join('')
+
+      if method == 'id'
+        id = query.to_i
+        partial = partial.where(code_number: id)
+        logger.debug('Parsing as ID ' + id.to_s)
+      elsif method == 'name'
+        name = query
+        partial = partial.where('name like ?', "%#{name}%")
+      elsif method == 'class'
+        class_number = query.to_i
+        partial = partial.where(class_number: class_number)
+      elsif method == 'year'
+        year = query.to_i
+        partial = partial.where(admission_year: year)
+      elsif method == 'department'
+        dep_name = query
+        departments = Department.where('name like ?', "%#{dep_name}%")
+        partial = partial.where(department_id: departments.collect { |d| d.id })
+      else
+        # No matching search method
+        # Conjuring up a never-matching WHERE clause
+        # Or should it simply be ignored? _TODO_
+        partial = partial.where(id: -1)
+      end
+
+      # Result
+      partial
+    end
+
+    # Obtaining the query string
     query = params[:query]
 
-    # Tokenizing the search query
-    tokens = query.split(':')
+    # Splitting the query string into search tokens
+    tokens = query.split(/\band\b/).collect { |t| t.strip }
 
-    # Extracting the search method, defaulting to searching by ID
-    method = tokens.size >= 2 ? tokens[0] : 'id'
+    # Initialize result
+    partial = Member
 
-    # Reassembling the search query
-    query = tokens.size >= 2 ? tokens[1 ... tokens.size].join('') : query
-
-    if method == 'id'
-      id = query.to_i
-      @members = Member.where(code_number: id).all
-    elsif method == 'name'
-      name = query
-      @members = Member.where('name like ?', "%#{name}%").all
-    elsif method == 'class'
-      class_number = query.to_i
-      @members = Member.where(class_number: class_number).all
-    elsif method == 'year'
-      year = query.to_i
-      @members = Member.where(admission_year: year).all
-    elsif method == 'department'
-      dep_name = query
-      departments = Department.where('name like ?', "%#{dep_name}%").all
-      @members = Member.where(department_id: departments.collect { |d| d.id })
-    else
-      # No matching search method
-      @members = []
+    # Process individual tokens
+    tokens.each do |t|
+      partial = process_token(t, partial)
     end
+
+    # Assign results
+    @members = partial.all
   end
 
   def member_by_code_number
