@@ -88,11 +88,35 @@ class MembersController < ApplicationController
   def search
     query = params[:query]
 
-    # Currently supports only searching by ID
+    # Tokenizing the search query
+    tokens = query.split(':')
 
-    id = query.to_i
+    # Extracting the search method, defaulting to searching by ID
+    method = tokens.size >= 2 ? tokens[0] : 'id'
 
-    @members = Member.where('code_number = ?', id).all
+    # Reassembling the search query
+    query = tokens.size >= 2 ? tokens[1 ... tokens.size].join('') : query
+
+    if method == 'id'
+      id = query.to_i
+      @members = Member.where(code_number: id).all
+    elsif method == 'name'
+      name = query
+      @members = Member.where('name like ?', "%#{name}%").all
+    elsif method == 'class'
+      class_number = query.to_i
+      @members = Member.where(class_number: class_number).all
+    elsif method == 'year'
+      year = query.to_i
+      @members = Member.where(admission_year: year).all
+    elsif method == 'department'
+      dep_name = query
+      departments = Department.where('name like ?', "%#{dep_name}%").all
+      @members = Member.where(department_id: departments.collect { |d| d.id })
+    else
+      # No matching search method
+      @members = []
+    end
   end
 
   def member_by_code_number
