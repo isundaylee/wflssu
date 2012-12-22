@@ -93,8 +93,6 @@ class MembersController < ApplicationController
     id = query.to_i
 
     @members = Member.where('code_number = ?', id).all
-
-    logger.debug Member.where('code_number = ?', id).all
   end
 
   def member_by_code_number
