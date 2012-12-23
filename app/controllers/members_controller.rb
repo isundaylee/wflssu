@@ -94,7 +94,7 @@ class MembersController < ApplicationController
       method = tokens.size >= 2 ? tokens[0] : 'id'
 
       # Reassembling the search query
-      query = tokens.size >= 2 ? tokens[1 ... tokens.size].join('') : tokens.join('')
+      query = tokens.size >= 2 ? tokens[1 ... tokens.size].join(':') : tokens.join(':')
 
       if method == 'id'
         id = query.to_i
