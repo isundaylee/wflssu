@@ -92,6 +92,7 @@ class MembersController < ApplicationController
 
       # Extracting the search method, defaulting to searching by ID
       method = tokens.size >= 2 ? tokens[0] : 'id'
+      method.downcase!
 
       # Reassembling the search query
       query = tokens.size >= 2 ? tokens[1 ... tokens.size].join(':') : tokens.join(':')
