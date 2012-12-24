@@ -1,6 +1,11 @@
 Su::Application.routes.draw do
 
+  get "shortlog/destroy"
+
   resource :session, only: [:new, :create, :destroy] do 
+  end
+
+  resources :shortlogs, only: [:destroy] do
   end
 
   resources :members, only: [:new, :create, :edit, :update, :index, :destroy, :show] do 

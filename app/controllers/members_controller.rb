@@ -85,6 +85,7 @@ class MembersController < ApplicationController
 
   def show
     @member = Member.find(params[:id])
+    store_location
   end
 
   def search

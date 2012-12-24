@@ -73,7 +73,7 @@
         <ol>
           <% @member.shortlogs.each do |sl| %>
             <li>
-              <span><%= sl.content %></span><br />
+              <span><%= sl.content %></span> <span><%= link_to 'Delete', shortlog_path(sl), method: :delete, confirm: 'Do you really want to delete this shortlog? ' %></span><br />
               <span class="members-show-shortlog-time"><%= sl.created_at %></span>
             </li>
           <% end %>

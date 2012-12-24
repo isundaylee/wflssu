@@ -20,7 +20,7 @@ module ApplicationHelper
     yield
   rescue ActiveRecord::RecordNotFound
     flash[:error] = "Invalid parameters. "
-    redirect_to root_url 
+    redirect_back
   end
 
 end
