@@ -42,7 +42,9 @@ class MembersController < ApplicationController
     is_current = true if params[:id].to_i == current_member.id
     new_privilege = params[:member][:privilege].to_i
 
-    if new_privilege != @member.privilege && new_privilege >= current_member.privilege
+    privilege_changed = (new_privilege != @member.privilege)
+
+    if privilege_changed && new_privilege >= current_member.privilege
       @flash = {}
       @flash[:error] = "You don't have sufficient privilege. "
       render 'edit'

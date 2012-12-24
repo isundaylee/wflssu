@@ -54,6 +54,7 @@ class Member < ActiveRecord::Base
   validates :privilege, presence: true, inclusion: {in: PRIVILEGES.keys, message: 'is invalid. '}
 
   before_save :create_remember_token
+  before_save :generate_shortlogs
 
   def self.human_attribute_name(attr, options = {})
     HUMANIZED_ATTRIBUTES[attr.to_sym] || super
@@ -80,6 +81,24 @@ class Member < ActiveRecord::Base
 
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
+    end
+
+    def generate_shortlogs
+      if self.privilege_changed?
+        old = self.privilege_was
+        now = self.privilege
+
+        self.shortlogs.create(content: "Position Change: #{PRIVILEGES[old]} -> #{PRIVILEGES[now]}")
+      end
+
+      logger.debug '#' * 80
+
+      if self.department_id_changed? 
+        old = self.department_id_was
+        now = self.department_id
+
+        self.shortlogs.create(content: "Department Change: #{Department.find(old).name} -> #{Department.find(now).name}")
+      end
     end
 
 end
