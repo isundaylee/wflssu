@@ -72,7 +72,10 @@
       <td colspan="2">
         <ol>
           <% @member.shortlogs.each do |sl| %>
-            <li><%= sl.content %></li>
+            <li>
+              <span><%= sl.content %></span><br />
+              <span class="members-show-shortlog-time"><%= sl.created_at %></span>
+            </li>
           <% end %>
         </ol>
       </td>
