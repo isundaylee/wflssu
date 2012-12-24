@@ -59,11 +59,23 @@
       <td>QQ</td>
       <td><%= @member.qq %></td>
     </tr>
-      <tr>
+    <tr>
       <th colspan="2" class="center">Profile Memo</th>
     </tr>
     <tr>
       <td colspan="2"><%= markdown @member.memo %></td>
+    </tr>
+    <tr>
+      <th colspan="2" class="center">Logs</th>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <ol>
+          <% @member.shortlogs.each do |sl| %>
+            <li><%= sl.content %></li>
+          <% end %>
+        </ol>
+      </td>
     </tr>
   <% end %>
 </table>
