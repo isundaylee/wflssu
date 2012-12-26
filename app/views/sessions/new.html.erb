@@ -1,16 +1,16 @@
 <div class="row">
   <div class="span6 offset3">
     <div class="well">
-      <h1 class="center">Login</h1>
+      <h1 class="center"><%= t('.title') %></h1>
 
       <%= render 'error_messages', errors: @errors %>
 
       <%= form_for :session, url: session_path, builder: MainFormBuilder, html: {class: 'form-regular'} do |f| %>
 
-        <%= f.text_field :code_number, placeholder: 'Your ID. ' %>
-        <%= f.password_field :password, placeholder: 'Your password. ' %>
+        <%= f.text_field :code_number, placeholder: t('.form_id_placeholder') %>
+        <%= f.password_field :password, placeholder: t('.form_password_placeholder') %>
 
-        <%= f.submit 'Login' %>
+        <%= f.submit t('.form_submit') %>
       
       <% end %>
 

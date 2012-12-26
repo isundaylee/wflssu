@@ -11,15 +11,15 @@ class SessionsController < ApplicationController
     @errors = []
 
     if !member
-      @errors << 'Member with the given ID not found. '
+      @errors << I18n.t('sessions.create.member_with_given_id_not_found')
       render 'new'
     else
       if member.authenticate(password)
-        flash[:success] = "You have successfully logged in as #{member.name}. "
+        flash[:success] = I18n.t('sessions.create.successfully_logged_in', name: member.name)
         sign_in member 
         redirect_to root_url
       else
-        @errors << 'Incorrect password. '
+        @errors << I18n.t('sessions.create.incorrect_password')
         render 'new'
       end
     end
@@ -27,7 +27,7 @@ class SessionsController < ApplicationController
 
   def destroy
     sign_out
-    flash[:success] = 'You have successfully logged out. '
+    flash[:success] = I18n.t('sessions.destroy.successfully_logged_out')
     redirect_to root_url
   end
 end

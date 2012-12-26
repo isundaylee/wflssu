@@ -1,0 +1,7 @@
+en:
+  sessions:
+    new:
+      title: "Login"
+      form_id_placeholder: "Your ID. "
+      form_password_placeholder: "Your password. "
+      form_submit: "Login"

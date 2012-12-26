@@ -1,0 +1,8 @@
+en:
+  sessions:
+    create:
+      member_with_given_id_not_found: "Member with the given ID not found. "
+      successfully_logged_in: "You have successfully logged in as %{name}. "
+      incorrect_password: "Incorrect password. "
+    destroy:
+      successfully_logged_out: "You have successfully logged out. "
