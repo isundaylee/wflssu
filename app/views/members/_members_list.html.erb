@@ -1,21 +1,21 @@
 <% if members.empty? %>
 
-  <p class="center">There are currently no members. </p>
+  <p class="center"><%= t('.no_members') %></p>
 
 <% else %>
 
   <table class="table table-bordered table-centered">
 
     <tr>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Gender</th>
-      <th>Year</th>
-      <th>Class</th>
-      <th>Phone Number</th>
-      <th>Email</th>
-      <th>Department</th>
-      <th>Actions</th>
+      <th><%= t('.column_id') %></th>
+      <th><%= t('.column_name') %></th>
+      <th><%= t('.column_gender') %></th>
+      <th><%= t('.column_year') %></th>
+      <th><%= t('.column_class') %></th>
+      <th><%= t('.column_phone') %></th>
+      <th><%= t('.column_email') %></th>
+      <th><%= t('.column_department') %></th>
+      <th><%= t('.column_actions') %></th>
     </tr>
 
     <% members.each do |member| %>
@@ -42,10 +42,10 @@
           <% end %>
         </td> 
         <td>
-          <%= link_to 'Show', member_path(member), class: 'btn btn-mini' %>
+          <%= link_to t('.action_show'), member_path(member), class: 'btn btn-mini' %>
           <% if signed_in_as_vice_president? %>
-            <%= link_to 'Edit', edit_member_path(member), class: 'btn btn-mini' %>
-            <%= link_to 'Delete', member_path(member), method: :delete, confirm: "Do you really want to delete #{member.name}? ", class: 'btn btn-mini btn-dangerous' %>
+            <%= link_to t('.action_edit'), edit_member_path(member), class: 'btn btn-mini' %>
+            <%= link_to t('.action_delete'), member_path(member), method: :delete, confirm: t('.confirm_delete', name: member.name), class: 'btn btn-mini btn-dangerous' %>
           <% end %>
         </td>
       </tr>

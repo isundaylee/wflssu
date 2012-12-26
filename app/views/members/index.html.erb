@@ -1,6 +1,9 @@
 <h1 class="center">
-  Members List
-  <%= 'of ' + @department.name if @department %>
+  <% if @department %>
+    <%= t('.title_with_department', department: @department.name) %>
+  <% else %>
+    <%= t('.title') %>
+  <% end %>
 </h1>
 
 <br />
@@ -12,9 +15,9 @@
 <% if signed_in_as_vice_president? %>
   <p class="center">
     <% if @department %>
-      <%= link_to 'Create New Member', new_department_member_path(@department), class: 'btn btn-primary' %>
+      <%= link_to t('.create_new_member'), new_department_member_path(@department), class: 'btn btn-primary' %>
     <% else %>
-      <%= link_to 'Create New Member', new_member_path, class: 'btn btn-primary center-block' %>
+      <%= link_to t('.create_new_member'), new_member_path, class: 'btn btn-primary center-block' %>
     <% end %>
   </p>
 <% end %>

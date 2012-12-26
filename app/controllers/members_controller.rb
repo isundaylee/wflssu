@@ -19,12 +19,12 @@ class MembersController < ApplicationController
 
     if @member.privilege >= current_member.privilege
       @flash = {} 
-      @flash[:error] = "You don't have sufficient privilege. "
+      @flash[:error] = I18n.t('members.create.insufficient_privilege')
       render 'new'
     elsif @member.save 
-      flash[:success] = "You have successfully created new member #{@member.name}. "
+      flash[:success] = I18n.t('members.create.flash_success', name: @member.name)
       if @member.birthday.nil?
-        flash[:warning] = "The newly created member has no birthday profile. This may result from an incorrectly formed birthday input. "
+        flash[:warning] = I18n.t('members.create.flash_birthday_nil')
       end
       redirect_to member_url(@member)
     else
@@ -46,11 +46,11 @@ class MembersController < ApplicationController
 
     if privilege_changed && new_privilege >= current_member.privilege
       @flash = {}
-      @flash[:error] = "You don't have sufficient privilege. "
+      @flash[:error] = I18n.t('members.update.insufficient_privilege')
       render 'edit'
     elsif @member.update_attributes(params[:member])
-      flash[:success] = "You have successfully updated profile for #{@member.name}. "
-      flash[:warning] = "The updated member has no birthday profile. This may result from an incorrectly formed birthday input. " if @member.birthday.nil?
+      flash[:success] = I18n.t('members.update.flash_success', name: @member.name)
+      flash[:warning] = I18n.t('members.update.flash_birthday_nil') if @member.birthday.nil?
       sign_in @member if is_current
       redirect_to member_url(@member)
     else
@@ -70,7 +70,7 @@ class MembersController < ApplicationController
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
-    flash[:success] = "You have successfully deleted #{@member.name}. "
+    flash[:success] = I18n.t('members.destroy.flash_success', name: @member.name)
     redirect_to members_url
   end
 
@@ -154,7 +154,7 @@ class MembersController < ApplicationController
     if user
       redirect_to user
     else
-      flash[:error] = "There is no member with ID #{code_number}. "
+      flash[:error] = I18n.t('members.member_by_code_number.flash_no_member_with_given_id', id: code_number)
       redirect_to root_url
     end
   end

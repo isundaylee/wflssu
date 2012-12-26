@@ -2,21 +2,21 @@
 
 <%= form_for(member, builder: MainFormBuilder, html: {class: 'form-regular'}) do |f| %>
 
-  <%= f.text_field :name, placeholder: 'Name. ' %>
-  <%= f.password_field :password, placeholder: 'Password. ' %>
-  <%= f.password_field :password_confirmation, placeholder: 'Password confirmation. ' %>
-  <%= f.text_field :admission_year, placeholder: 'Admission year. ' %>
-  <%= f.text_field :class_number, placeholder: 'Class number. ' %>
-  <%= f.text_field :phone_number, placeholder: 'Phone number. ' %>
-  <%= f.text_field :email, placeholder: 'Email address. ' %>
+  <%= f.text_field :name, placeholder: t('.form_name_placeholder') %>
+  <%= f.password_field :password, placeholder: t('.form_password_placeholder') %>
+  <%= f.password_field :password_confirmation, placeholder: t('.form_password_confirmation_placeholder') %>
+  <%= f.text_field :admission_year, placeholder: t('.form_admission_year_placeholder') %>
+  <%= f.text_field :class_number, placeholder: t('.form_class_number_placeholder') %>
+  <%= f.text_field :phone_number, placeholder: t('.form_phone_number_placeholder') %>
+  <%= f.text_field :email, placeholder: t('.form_email_placeholder') %>
   <%= f.collection_select :gender, Member::GENDERS, :first, :last %>
-  <%= f.text_field :qq, placeholder: 'QQ number. ' %>
-  <%= f.text_field :birthday, placeholder: 'Birthday, DD/MM/YYYY. ' %>
+  <%= f.text_field :qq, placeholder: t('.form_qq_placeholder') %>
+  <%= f.text_field :birthday, placeholder: t('.form_birthday_placeholder') %>
   <%= f.collection_select :department_id, Department.names, :first, :last %>
   <%= f.collection_select :privilege, Member::PRIVILEGES, :first, :last %>
-  <%= f.text_field :secondary_school, placeholder: 'Secondary school name. ' %>
-  <%= f.text_field :code_number, placeholder: 'Member code number. ' %>
-  <%= f.text_area :memo, placeholder: 'Profile memo. ', rows: 10 %>
+  <%= f.text_field :secondary_school, placeholder: t('.form_secondary_school_placeholder') %>
+  <%= f.text_field :code_number, placeholder: t('.form_code_number_placeholder') %>
+  <%= f.text_area :memo, placeholder: t('.form_memo_placeholder'), rows: 10 %>
 
   <%= f.submit submit_text %>
 
