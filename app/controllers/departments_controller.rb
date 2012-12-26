@@ -10,7 +10,7 @@ class DepartmentsController < ApplicationController
     @department = Department.new(params[:department])
 
     if @department.save then
-      flash[:success] = "You have successfully created the department #{@department.name}. "
+      flash[:success] = I18n.t('departments.create.flash_success', name: @department.name)   
       redirect_to departments_url 
     else
       render 'new'
@@ -26,6 +26,7 @@ class DepartmentsController < ApplicationController
     @department = Department.find(params[:id])
 
     if @department.update_attributes(params[:department])
+      flash[:success] = I18n.t('departments.update.flash_success', name: @department.name)
       flash[:success] = "Successfully updated information for department #{@department.name}. "
       redirect_to departments_url
     else

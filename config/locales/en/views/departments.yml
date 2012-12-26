@@ -1,0 +1,20 @@
+en:
+  departments:
+    new: 
+      title: "New Department"
+      form_submit: "Create Department"
+    form: 
+      form_name_placeholder: "Department name. "
+    edit: 
+      title: "Edit Department"
+      form_submit: "Update Department"
+    index: 
+      title: "Departments List"
+      no_departments: "There are currently no departments. "
+      column_id: "Department ID"
+      column_name: "Department Name"
+      column_actions: "Actions"
+      action_edit: "Edit"
+      action_show_members: "Members"
+      action_new_member: "New Member"
+      create_new_department: "Create New Department"

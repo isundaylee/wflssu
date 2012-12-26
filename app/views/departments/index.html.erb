@@ -1,19 +1,19 @@
-<h1 class="center">Departments List</h1>
+<h1 class="center"><%= t('.title') %></h1>
 
 <br />
 
 <% if @departments.empty? %>
 
-  <p class="center">There are currently no departments. </p>
+  <p class="center"><%= t('.no_departments') %></p>
 
 <% else %>
 
   <table class="table table-bordered table-centered">
 
     <tr>
-      <th>ID</th>
-      <th>Department Name</th>
-      <th>Actions</th>
+      <th><%= t('.column_id') %></th>
+      <th><%= t('.column_name') %></th>
+      <th><%= t('.column_actions') %></th>
     </tr>
 
     <% @departments.each do |department| %>
@@ -21,9 +21,9 @@
         <td style="width: 10%; "><%= department.id %></td>
         <td><%= department.name %></td>
         <td style="width: 25%; ">
-          <%= link_to 'Edit', edit_department_path(department), class: 'btn btn-mini' %>
-          <%= link_to 'Members', department_members_path(department), class: 'btn btn-mini' %>
-          <%= link_to 'New Member', new_department_member_path(department), class: 'btn btn-mini' %>
+          <%= link_to t('.action_edit'), edit_department_path(department), class: 'btn btn-mini' %>
+          <%= link_to t('.action_show_members'), department_members_path(department), class: 'btn btn-mini' %>
+          <%= link_to t('.action_new_member'), new_department_member_path(department), class: 'btn btn-mini' %>
         </td>
       </tr>
     <% end %>
@@ -35,5 +35,5 @@
 <br />
 
 <p class="center">
-  <%= link_to 'Create New Department', new_department_path, class: 'btn btn-primary center-block' %>
+  <%= link_to t('.create_new_department'), new_department_path, class: 'btn btn-primary center-block' %>
 </p>

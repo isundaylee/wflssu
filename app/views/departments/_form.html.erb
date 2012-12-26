@@ -2,7 +2,7 @@
 
 <%= form_for(department, builder: MainFormBuilder, html: {class: 'form-regular'}) do |f| %>
 
-  <%= f.text_field :name, placeholder: 'Department name. ' %>
+  <%= f.text_field :name, placeholder: t('.form_name_placeholder') %>
 
   <%= f.submit submit_text %>
 

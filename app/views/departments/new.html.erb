@@ -1,9 +1,9 @@
 <div class="row">
   <div class="span6 offset3">
     <div class="well">
-      <h1 class="center">New Department</h1>
+      <h1 class="center"><%= t('.title') %></h1>
 
-      <%= render 'form', department: @department, submit_text: 'Create Department' %>
+      <%= render 'form', department: @department, submit_text: t('.form_submit') %>
     </div>
   </div>
 </div>
