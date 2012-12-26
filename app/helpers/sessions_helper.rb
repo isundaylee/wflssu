@@ -52,7 +52,7 @@ module SessionsHelper
   private 
 
     def insufficient_privilege
-      flash[:error] = 'You don\'t have sufficient privilege. '
+      flash[:error] = I18n.t('helpers.sessions.insufficient_privilege.insufficient_privilege')
       redirect_to root_url
     end
 

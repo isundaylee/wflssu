@@ -19,7 +19,7 @@ module ApplicationHelper
   def rescue_record_not_found
     yield
   rescue ActiveRecord::RecordNotFound
-    flash[:error] = "Invalid parameters. "
+    flash[:error] = I18n.t('helpers.application.rescue_record_not_found.invalid_parameters')
     redirect_back
   end
 
