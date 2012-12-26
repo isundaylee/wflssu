@@ -70,14 +70,18 @@
     </tr>
     <tr>
       <td colspan="2">
-        <ol>
-          <% @member.shortlogs.each do |sl| %>
-            <li>
-              <span><%= sl.content %></span> <span><%= link_to 'Delete', shortlog_path(sl), method: :delete, confirm: 'Do you really want to delete this shortlog? ' %></span><br />
-              <span class="members-show-shortlog-time"><%= sl.created_at %></span>
-            </li>
-          <% end %>
-        </ol>
+        <% if @member.shortlogs.empty? %>
+          <p class="members-show-shortlog-none">There are no logs yet for this member. </p>
+        <% else %>
+          <ol id="members-show-shortlogs">
+            <% @member.shortlogs.each do |sl| %>
+              <li>
+                <span><%= sl.content %></span> <span class="members-show-shortlog-delete"><%= link_to 'Delete', shortlog_path(sl), method: :delete, confirm: 'Do you really want to delete this shortlog? ' %></span><br />
+                <span class="members-show-shortlog-time"><%= sl.created_at %></span>
+              </li>
+            <% end %>
+          </ol>
+        <% end %>
       </td>
     </tr>
   <% end %>
