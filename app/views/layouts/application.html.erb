@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WFLS Student Union</title>
+  <title><%= t('.title') %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -11,25 +11,25 @@
   <div class="navbar navbar-inverse navbar-static-top">
     <div class="navbar-inner">
       <div class="container">
-        <%= link_to 'WFLSSU', root_path, class: 'brand' %>
+        <%= link_to t('.logo_text'), root_path, class: 'brand' %>
         <ul class="nav pull-right">
           <% if signed_in? %>
-            <li><%= link_to "Welcome, #{current_member.name}. ", member_path(current_member) %></li>
+            <li><%= link_to t('.welcome', name: current_member.name), member_path(current_member) %></li>
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Features <b class="caret"></b></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t('.features') %> <b class="caret"></b></a>
               <ul class="dropdown-menu">
                 <% if signed_in_as_vice_president? %>
-                  <li><%= link_to 'Departments', departments_path %></li>
+                  <li><%= link_to t('.departments'), departments_path %></li>
                 <% end %>
-                <li><%= link_to 'Members', members_path %></li>
+                <li><%= link_to t('.members'), members_path %></li>
               </ul>
             </li>
-            <li><%= link_to 'Logout', session_path, method: :delete, confirm: 'Do you really want to log out? ' %></li>
+            <li><%= link_to t('.logout'), session_path, method: :delete, confirm: t('.confirm_logout') %></li>
             <%= form_tag search_members_path, method: 'get', class: 'navbar-search' do %>
-              <%= text_field_tag 'query', '', class: 'search-query', placeholder: 'Search member by ID. ' %>
+              <%= text_field_tag 'query', '', class: 'search-query', placeholder: t('.search_form_query_placeholder') %>
             <% end %>
           <% else %>
-            <li><%= link_to 'Login', new_session_path %></li>
+            <li><%= link_to t('.login'), new_session_path %></li>
           <% end %>
         </ul>
       </div>
@@ -59,7 +59,7 @@
 
   <footer class="footer">
     <div class="container">
-      <p class="center"><small>Copyright &copy; 2012 Wuhan Foreign Languages School Student Union. All rights reserved. <small></p>
+      <p class="center"><small><%= t('.copyright') %><small></p>
     </div>
   </footer>
 
