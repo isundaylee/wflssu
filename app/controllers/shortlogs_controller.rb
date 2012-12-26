@@ -7,7 +7,7 @@ class ShortlogsController < ApplicationController
     name = sl.member.name
     content = sl.content
     sl.destroy
-    flash[:success] = "You have successfully deleted #{name}'s log message: #{content}"
+    flash[:success] = I18n.t('shortlogs.destroy.flash_success', name: name, content: content)
     redirect_back
   end
 end
