@@ -45,7 +45,7 @@ namespace :deploy do
   after "deploy", "deploy:symlink_database"
   desc "Link the production SQLite3 database. "
   task :symlink_database do 
-    run "cd #{current_path}; ln -s #{shared_path}/db/production.sqlite3 #{release_path}/db/production.SQLite33"
+    run "cd #{current_path}; ln -s #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
   end
 
   desc "precompile the assets"
