@@ -1,0 +1,23 @@
+en:
+  activerecord:
+    models:
+      member: "Department"
+    attributes:
+      member:
+        admission_year: "Admission Year"
+        birthday: "Birthday"
+        class_number: "Class Number"
+        code_number: "ID"
+        email: "Email"
+        gender: "Gender"
+        memo: "Profile Memo"
+        name: "Name"
+        password_digest: "Password"
+        phone_number: "Phone Number"
+        qq: "QQ" 
+        secondary_school: "Secondary School"
+        privilege: "Privilege"
+
+models:
+  member:
+    validation_message_is_invalid: "is invalid. "

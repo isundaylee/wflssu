@@ -1,0 +1,7 @@
+en:
+  activerecord:
+    models:
+      shortlog: "Log"
+    attributes:
+      shortlog:
+        content: "Content"

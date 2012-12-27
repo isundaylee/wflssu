@@ -13,11 +13,6 @@ class Member < ActiveRecord::Base
     2 => 'Female'
   }
 
-  HUMANIZED_ATTRIBUTES = {
-    qq: 'QQ',
-    secondary_school: 'Secondary school name'
-  }
-
   PRIVILEGES = {
     0 => 'Member', 
     10 => 'Vice Deparmental President', 
@@ -41,7 +36,7 @@ class Member < ActiveRecord::Base
   validates :class_number, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 20}
   validates :phone_number, allow_blank: true, length: {in: 8..11}, numericality: {only_integer: true}
   validates :email, allow_blank: true, length: {in: 5..50}, format: {with: EMAIL_REGEXP}
-  validates :gender, presence: true, inclusion: {in: GENDERS.keys, message: 'is invalid. '}
+  validates :gender, presence: true, inclusion: {in: GENDERS.keys, message: I18n.t('models.member.validation_message_is_invalid')}
   validates :qq, allow_blank: true, length: {in: 5..15}, numericality: {only_integer: true}
   validates_associated :department
   validates :secondary_school, allow_blank: true, length: {in: 1..100}
@@ -51,14 +46,10 @@ class Member < ActiveRecord::Base
 
   validates :password, length: {in: 6..30, if: :password_changed?}
   validates :password_confirmation, presence: {if: :password_changed?}
-  validates :privilege, presence: true, inclusion: {in: PRIVILEGES.keys, message: 'is invalid. '}
+  validates :privilege, presence: true, inclusion: {in: PRIVILEGES.keys, message: I18n.t('models.member.validation_message_is_invalid')}
 
   before_save :create_remember_token
   before_save :generate_shortlogs
-
-  def self.human_attribute_name(attr, options = {})
-    HUMANIZED_ATTRIBUTES[attr.to_sym] || super
-  end
 
   def has_privilege_of?(privilege)
     self.privilege >= privilege
