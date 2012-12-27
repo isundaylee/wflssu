@@ -75,14 +75,14 @@ class Member < ActiveRecord::Base
     end
 
     def generate_shortlogs
+      return if self.new_record?
+
       if self.privilege_changed?
         old = self.privilege_was
         now = self.privilege
 
         self.shortlogs.create(content: "Position Change: #{PRIVILEGES[old]} -> #{PRIVILEGES[now]}")
       end
-
-      logger.debug '#' * 80
 
       if self.department_id_changed? 
         old = self.department_id_was
