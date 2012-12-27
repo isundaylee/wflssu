@@ -1,0 +1,7 @@
+zh:
+  activerecord:
+    models:
+      shortlog: "日志"
+    attributes:
+      shortlog:
+        content: "内容"

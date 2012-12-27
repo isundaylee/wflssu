@@ -1,0 +1,7 @@
+zh:
+  activerecord:
+    models:
+      department: "部门"
+    attributes:
+      department:
+        name: "名称"

@@ -1,0 +1,23 @@
+zh:
+  activerecord:
+    models:
+      member: "成员"
+    attributes:
+      member:
+        admission_year: "入学年份"
+        birthday: "生日"
+        class_number: "班级"
+        code_number: "ID"
+        email: "电子邮箱"
+        gender: "性别"
+        memo: "档案"
+        name: "姓名"
+        password_digest: "密码"
+        phone_number: "电话"
+        qq: "QQ" 
+        secondary_school: "初中学校"
+        privilege: "权限"
+
+models:
+  member:
+    validation_message_is_invalid: "无效. "

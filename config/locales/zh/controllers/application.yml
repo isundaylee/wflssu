@@ -1,0 +1,4 @@
+zh:
+  application:
+    set_locale:
+      flash_success: "您已成功将语言设置为 %{locale_name}"

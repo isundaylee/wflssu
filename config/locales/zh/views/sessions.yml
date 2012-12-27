@@ -1,0 +1,7 @@
+zh:
+  sessions:
+    new:
+      title: "登陆"
+      form_id_placeholder: "您的 ID"
+      form_password_placeholder: "您的密码"
+      form_submit: "登陆"

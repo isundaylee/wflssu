@@ -27,7 +27,6 @@ class DepartmentsController < ApplicationController
 
     if @department.update_attributes(params[:department])
       flash[:success] = I18n.t('departments.update.flash_success', name: @department.name)
-      flash[:success] = "Successfully updated information for department #{@department.name}. "
       redirect_to departments_url
     else
       render 'edit'
