@@ -17,7 +17,15 @@ en:
         qq: "QQ" 
         secondary_school: "Secondary School"
         privilege: "Privilege"
-
-models:
-  member:
-    validation_message_is_invalid: "is invalid. "
+  models:
+    member:
+      validation_message_is_invalid: "is invalid. "
+      gender_unknown: "Unknown"
+      gender_male: "Male"
+      gender_female: "Female"
+      privilege_member: "Member"
+      privilege_vice_dpresident: "Vice Departmental President"
+      privilege_dpresident: "Departmental President"
+      privilege_vice_president: "Vice President"
+      privilege_president: "President"
+      privilege_administrator: "Administrator"

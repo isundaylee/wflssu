@@ -9,11 +9,11 @@
   <%= f.text_field :class_number, placeholder: t('.form_class_number_placeholder') %>
   <%= f.text_field :phone_number, placeholder: t('.form_phone_number_placeholder') %>
   <%= f.text_field :email, placeholder: t('.form_email_placeholder') %>
-  <%= f.collection_select :gender, Member::GENDERS, :first, :last %>
+  <%= f.collection_select :gender, Hash[Member::GENDERS.collect { |v, s| [v, t('models.member.gender_' + s)] }], :first, :last %>
   <%= f.text_field :qq, placeholder: t('.form_qq_placeholder') %>
   <%= f.text_field :birthday, placeholder: t('.form_birthday_placeholder') %>
   <%= f.collection_select :department_id, Department.names, :first, :last %>
-  <%= f.collection_select :privilege, Member::PRIVILEGES, :first, :last %>
+  <%= f.collection_select :privilege, Hash[Member::PRIVILEGES.collect { |v, s| [v, t('models.member.privilege_' + s)] }], :first, :last %>
   <%= f.text_field :secondary_school, placeholder: t('.form_secondary_school_placeholder') %>
   <%= f.text_field :code_number, placeholder: t('.form_code_number_placeholder') %>
   <%= f.text_area :memo, placeholder: t('.form_memo_placeholder'), rows: 10 %>

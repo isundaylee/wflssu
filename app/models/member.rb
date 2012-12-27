@@ -8,18 +8,18 @@ class Member < ActiveRecord::Base
   DATE_REGEXP = /[0-9]{8,8}/i
 
   GENDERS = {
-    0 => 'Unknown', 
-    1 => 'Male', 
-    2 => 'Female'
+    0 => 'unknown',
+    1 => 'male',
+    2 => 'female'
   }
 
   PRIVILEGES = {
-    0 => 'Member', 
-    10 => 'Vice Deparmental President', 
-    15 => 'Departmental President', 
-    20 => 'Vice President', 
-    25 => 'President', 
-    100 => 'Administrator'
+    0 => 'member', 
+    10 => 'vice_dpresident', 
+    15 => 'dpresident', 
+    20 => 'vice_president', 
+    25 => 'president', 
+    100 => 'administrator'
   }
 
   MEMBER_PRIVILEGE = 0

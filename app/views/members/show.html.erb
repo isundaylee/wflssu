@@ -14,7 +14,7 @@
   </tr>
   <tr>
     <td><%= t('.field_gender') %></td>
-    <td><%= Member::GENDERS[@member.gender] %></td>
+    <td><%= t('models.member.gender_' + Member::GENDERS[@member.gender]) %></td>
   </tr>
   <tr>
     <td><%= t('.field_admission_year') %></td>
@@ -30,7 +30,7 @@
   </tr>
   <tr>
     <td><%= t('.field_post') %></td>
-    <td><%= Member::PRIVILEGES[@member.privilege] %></td>
+    <td><%= t('models.member.privilege_' + Member::PRIVILEGES[@member.privilege]) %></td>
   </tr>
   <% if signed_in? %>
     <tr>

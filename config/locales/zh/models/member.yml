@@ -17,7 +17,15 @@ zh:
         qq: "QQ" 
         secondary_school: "初中学校"
         privilege: "权限"
-
-models:
-  member:
-    validation_message_is_invalid: "无效. "
+  models:
+    member:
+      validation_message_is_invalid: "无效。"
+      gender_unknown: "未知"
+      gender_male: "男"
+      gender_female: "女"
+      privilege_member: "成员"
+      privilege_vice_dpresident: "副部长"
+      privilege_dpresident: "部长"
+      privilege_vice_president: "副主席"
+      privilege_president: "主席"
+      privilege_administrator: "管理员"

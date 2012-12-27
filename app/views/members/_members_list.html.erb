@@ -22,7 +22,7 @@
       <tr>
         <td><%= member.code_number %></td>
         <td><%= member.name %></td>
-        <td><%= Member::GENDERS[member.gender] %></td>
+        <td><%= t('models.member.gender_' + Member::GENDERS[member.gender]) %></td>
         <td><%= member.admission_year %></td>
         <td><%= member.class_number %></td>
         <td><%= member.phone_number %></td>
