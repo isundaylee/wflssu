@@ -1,0 +1,4 @@
+template:
+  application:
+    set_locale:
+      flash_success: 

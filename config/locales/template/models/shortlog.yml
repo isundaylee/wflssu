@@ -1,8 +1,7 @@
----
-en:
+template:
   activerecord:
     models:
-      shortlog: Log
+      shortlog: 
     attributes:
       shortlog:
-        content: Content
+        content: 

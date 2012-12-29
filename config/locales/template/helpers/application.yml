@@ -1,6 +1,5 @@
----
-zh:
+template:
   helpers:
     application:
       rescue_record_not_found:
-        invalid_parameters: 无效参数。
+        invalid_parameters: 

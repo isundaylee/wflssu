@@ -1,62 +1,63 @@
+---
 zh:
   members:
     new:
-      title: "新成员"
-      form_submit: "创建成员"
+      title: 新成员
+      form_submit: 创建成员
     edit:
-      title: "编辑成员"
-      form_submit: "更新成员信息"
+      title: 编辑成员
+      form_submit: 更新成员信息
     index:
-      title: "成员列表"
-      title_with_department: "%{department}成员列表"
-      create_new_member: "创建新成员"
+      title: 成员列表
+      title_with_department: ! '%{department}成员列表'
+      create_new_member: 创建新成员
     show:
-      basic_profile: "基础信息"
-      field_id: "ID"
-      field_gender: "性别"
-      field_admission_year: "入学年份"
-      field_class: "班级"
-      field_department: "部门"
-      field_post: "职务"
-      personal_information: "个人信息"
-      field_birthday: "生日"
-      field_secondary_school: "初中学校"
-      contact_information: "联络信息"
-      field_phone_number: "电话"
-      field_email_address: "电子邮箱"
-      field_qq: "QQ"
-      profile_memo: "档案"
-      logs: "日志"
-      no_logs: "目前该成员尚无日志信息。"
-      confirm_delete_log: "您真的想删除此条日志么？"
-      edit_member_profile: "编辑成员信息"
+      basic_profile: 基础信息
+      field_id: ID
+      field_gender: 性别
+      field_admission_year: 入学年份
+      field_class: 班级
+      field_department: 部门
+      field_post: 职务
+      personal_information: 个人信息
+      field_birthday: 生日
+      field_secondary_school: 初中学校
+      contact_information: 联络信息
+      field_phone_number: 电话
+      field_email_address: 电子邮箱
+      field_qq: QQ
+      profile_memo: 档案
+      logs: 日志
+      no_logs: 目前该成员尚无日志信息。
+      confirm_delete_log: 您真的想删除此条日志么？
+      edit_member_profile: 编辑成员信息
     search:
-      title: "搜索结果"
+      title: 搜索结果
     form:
-      form_name_placeholder: "姓名"
-      form_password_placeholder: "密码"
-      form_password_confirmation_placeholder: "确认密码"
-      form_admission_year_placeholder: "入学年份"
-      form_class_number_placeholder: "班级"
-      form_phone_number_placeholder: "电话"
-      form_email_placeholder: "电子邮箱"
-      form_qq_placeholder: "QQ"
-      form_birthday_placeholder: "生日，格式为 DD/MM/YYYY"
-      form_secondary_school_placeholder: "初中学校"
-      form_code_number_placeholder: "ID"
-      form_memo_placeholder: "档案"
+      form_name_placeholder: 姓名
+      form_password_placeholder: 密码
+      form_password_confirmation_placeholder: 确认密码
+      form_admission_year_placeholder: 入学年份
+      form_class_number_placeholder: 班级
+      form_phone_number_placeholder: 电话
+      form_email_placeholder: 电子邮箱
+      form_qq_placeholder: QQ
+      form_birthday_placeholder: 生日，格式为 DD/MM/YYYY
+      form_secondary_school_placeholder: 初中学校
+      form_code_number_placeholder: ID
+      form_memo_placeholder: 档案
     members_list:
-      column_id: "ID"
-      column_name: "姓名"
-      column_gender: "性别"
-      column_year: "入学年份"
-      column_class: "班级"
-      column_phone: "电话"
-      column_email: "电子邮箱"
-      column_department: "部门"
-      column_actions: "操作"
-      action_show: "显示"
-      action_edit: "编辑"
-      action_delete: "删除"
-      confirm_delete: "您真的想删除 %{name} 么？"
-      no_members: "没有匹配成员。"
+      column_id: ID
+      column_name: 姓名
+      column_gender: 性别
+      column_year: 入学年份
+      column_class: 班级
+      column_phone: 电话
+      column_email: 电子邮箱
+      column_department: 部门
+      column_actions: 操作
+      action_show: 显示
+      action_edit: 编辑
+      action_delete: 删除
+      confirm_delete: 您真的想删除 %{name} 么？
+      no_members: 没有匹配成员。

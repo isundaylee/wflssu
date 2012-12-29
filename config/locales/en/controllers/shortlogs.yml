@@ -1,4 +1,5 @@
+---
 en:
   shortlogs:
     destroy:
-      flash_success: "You have successfully deleted %{name}'s log message: %{content}"
+      flash_success: ! 'You have successfully deleted %{name}''s log message: %{content}'

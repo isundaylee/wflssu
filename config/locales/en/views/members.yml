@@ -1,62 +1,63 @@
+---
 en:
   members:
     new:
-      title: "New Member"
-      form_submit: "Create Member"
+      title: New Member
+      form_submit: Create Member
     edit:
-      title: "Edit Member"
-      form_submit: "Update Member"
+      title: Edit Member
+      form_submit: Update Member
     index:
-      title: "Members"
-      title_with_department: "Members of %{department}"
-      create_new_member: "Create New Member"
+      title: Members
+      title_with_department: Members of %{department}
+      create_new_member: Create New Member
     show:
-      basic_profile: "Basic Profile"
-      field_id: "ID"
-      field_gender: "Gender"
-      field_admission_year: "Admission Year"
-      field_class: "Class"
-      field_department: "Department"
-      field_post: "Post"
-      personal_information: "Personal Information"
-      field_birthday: "Birthday"
-      field_secondary_school: "Secondary School"
-      contact_information: "Contact Information"
-      field_phone_number: "Phone Number"
-      field_email_address: "Email Address"
-      field_qq: "QQ"
-      profile_memo: "Profile Memo"
-      logs: "Logs"
-      no_logs: "There are no logs yet for this member. "
-      confirm_delete_log: "Do you really want to delete the log? "
-      edit_member_profile: "Edit Member Profile"
+      basic_profile: Basic Profile
+      field_id: ID
+      field_gender: Gender
+      field_admission_year: Admission Year
+      field_class: Class
+      field_department: Department
+      field_post: Post
+      personal_information: Personal Information
+      field_birthday: Birthday
+      field_secondary_school: Secondary School
+      contact_information: Contact Information
+      field_phone_number: Phone Number
+      field_email_address: Email Address
+      field_qq: QQ
+      profile_memo: Profile Memo
+      logs: Logs
+      no_logs: ! 'There are no logs yet for this member. '
+      confirm_delete_log: ! 'Do you really want to delete the log? '
+      edit_member_profile: Edit Member Profile
     search:
-      title: "Search Result"
+      title: Search Result
     form:
-      form_name_placeholder: "Name. "
-      form_password_placeholder: "Password. "
-      form_password_confirmation_placeholder: "Password confirmation. "
-      form_admission_year_placeholder: "Admission year. "
-      form_class_number_placeholder: "Class number. "
-      form_phone_number_placeholder: "Phone number. "
-      form_email_placeholder: "Email address. "
-      form_qq_placeholder: "QQ. "
-      form_birthday_placeholder: "Birthday, format DD/MM/YYYY. "
-      form_secondary_school_placeholder: "Secondary school. "
-      form_code_number_placeholder: "ID. "
-      form_memo_placeholder: "Profile memo. "
+      form_name_placeholder: ! 'Name. '
+      form_password_placeholder: ! 'Password. '
+      form_password_confirmation_placeholder: ! 'Password confirmation. '
+      form_admission_year_placeholder: ! 'Admission year. '
+      form_class_number_placeholder: ! 'Class number. '
+      form_phone_number_placeholder: ! 'Phone number. '
+      form_email_placeholder: ! 'Email address. '
+      form_qq_placeholder: ! 'QQ. '
+      form_birthday_placeholder: ! 'Birthday, format DD/MM/YYYY. '
+      form_secondary_school_placeholder: ! 'Secondary school. '
+      form_code_number_placeholder: ! 'ID. '
+      form_memo_placeholder: ! 'Profile memo. '
     members_list:
-      column_id: "ID"
-      column_name: "Name"
-      column_gender: "Gender"
-      column_year: "Year"
-      column_class: "Class"
-      column_phone: "Phone"
-      column_email: "Email"
-      column_department: "Department"
-      column_actions: "Actions"
-      action_show: "Show"
-      action_edit: "Edit"
-      action_delete: "Delete"
-      confirm_delete: "Do you really want to delete %{name}? "
-      no_members: "There are no members to show. "
+      column_id: ID
+      column_name: Name
+      column_gender: Gender
+      column_year: Year
+      column_class: Class
+      column_phone: Phone
+      column_email: Email
+      column_department: Department
+      column_actions: Actions
+      action_show: Show
+      action_edit: Edit
+      action_delete: Delete
+      confirm_delete: ! 'Do you really want to delete %{name}? '
+      no_members: ! 'There are no members to show. '

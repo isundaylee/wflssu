@@ -1,0 +1,8 @@
+template:
+  sessions:
+    create:
+      member_with_given_id_not_found: 
+      successfully_logged_in: 
+      incorrect_password: 
+    destroy:
+      successfully_logged_out: 

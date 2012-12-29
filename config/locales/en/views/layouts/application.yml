@@ -1,14 +1,16 @@
+---
 en:
   layouts:
     application:
-      title: "WFLS Students' Union"
-      logo_text: "WFLSSU"
-      login: "Login"
-      copyright: "Copyright © 2012 Wuhan Foreign Languages School Student Union. All rights reserved. "
-      welcome: "Welcome, %{name}"
-      features: "Features"
-      departments: "Departments"
-      members: "Members"
-      logout: "Logout"
-      confirm_logout: "Do you really want to log out? "
-      search_form_query_placeholder: "Search for members here. "
+      title: WFLS Students' Union
+      logo_text: WFLSSU
+      login: Login
+      copyright: ! 'Copyright © 2012 Wuhan Foreign Languages School Student Union.
+        All rights reserved. '
+      welcome: Welcome, %{name}
+      features: Features
+      departments: Departments
+      members: Members
+      logout: Logout
+      confirm_logout: ! 'Do you really want to log out? '
+      search_form_query_placeholder: ! 'Search for members here. '

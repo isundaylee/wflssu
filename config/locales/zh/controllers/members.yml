@@ -1,14 +1,15 @@
+---
 zh:
   members:
     create:
-      insufficient_privilege: "您不具有足够的权限。"
-      flash_success: "您成功的创建了新成员 %{name}。"
-      flash_birthday_nil: "新创建的成员缺失生日信息。这可能是因为您输入了格式错误的生日信息。"
+      insufficient_privilege: 您不具有足够的权限。
+      flash_success: 您成功的创建了新成员 %{name}。
+      flash_birthday_nil: 新创建的成员缺失生日信息。这可能是因为您输入了格式错误的生日信息。
     update:
-      insufficient_privilege: "您不具有足够的权限。"
-      flash_success: "您成功的更新了 %{name} 的成员信息。"
-      flash_birthday_nil: "更新后的成员信息缺失生日信息。这可能是因为您输入了格式错误的生日信息。"
+      insufficient_privilege: 您不具有足够的权限。
+      flash_success: 您成功的更新了 %{name} 的成员信息。
+      flash_birthday_nil: 更新后的成员信息缺失生日信息。这可能是因为您输入了格式错误的生日信息。
     destroy:
-      flash_success: "您成功的删除了 %{name}。"
+      flash_success: 您成功的删除了 %{name}。
     member_by_code_number:
-      flash_no_member_with_given_id: "未找到 ID 为 %{id} 的成员"
+      flash_no_member_with_given_id: 未找到 ID 为 %{id} 的成员

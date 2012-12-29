@@ -1,14 +1,17 @@
+---
 en:
   members:
     create:
-      insufficient_privilege: "You don't have sufficient privilege. " 
-      flash_success: "You have successfully created new member %{name}. "
-      flash_birthday_nil: "The newly created member has no birthday profile. This may result from an incorrectly formed birthday input. "
+      insufficient_privilege: ! 'You don''t have sufficient privilege. '
+      flash_success: ! 'You have successfully created new member %{name}. '
+      flash_birthday_nil: ! 'The newly created member has no birthday profile. This
+        may result from an incorrectly formed birthday input. '
     update:
-      insufficient_privilege: "You don't have sufficient privilege. "
-      flash_success: "You have successfully updated profile for %{name}. "
-      flash_birthday_nil: "The updated member profile has no birthday data. This may result from an incorrectly formed birthday input. "
+      insufficient_privilege: ! 'You don''t have sufficient privilege. '
+      flash_success: ! 'You have successfully updated profile for %{name}. '
+      flash_birthday_nil: ! 'The updated member profile has no birthday data. This
+        may result from an incorrectly formed birthday input. '
     destroy:
-      flash_success: "You have successfully deleted %{name}. "
+      flash_success: ! 'You have successfully deleted %{name}. '
     member_by_code_number:
-      flash_no_member_with_given_id: "There is no member with ID %{id}. "
+      flash_no_member_with_given_id: ! 'There is no member with ID %{id}. '

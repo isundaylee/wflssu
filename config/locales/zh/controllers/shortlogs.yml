@@ -1,4 +1,5 @@
+---
 zh:
   shortlogs:
     destroy:
-      flash_success: "您删除了 %{name} 的日志：%{content}。"
+      flash_success: 您删除了 %{name} 的日志：%{content}。

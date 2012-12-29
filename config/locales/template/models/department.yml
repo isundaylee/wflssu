@@ -1,8 +1,7 @@
----
-zh:
+template:
   activerecord:
     models:
-      department: 部门
+      department: 
     attributes:
       department:
-        name: 名称
+        name: 

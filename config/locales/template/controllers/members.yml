@@ -1,0 +1,14 @@
+template:
+  members:
+    create:
+      insufficient_privilege: 
+      flash_success: 
+      flash_birthday_nil: 
+    update:
+      insufficient_privilege: 
+      flash_success: 
+      flash_birthday_nil: 
+    destroy:
+      flash_success: 
+    member_by_code_number:
+      flash_no_member_with_given_id: 

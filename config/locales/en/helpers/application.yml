@@ -1,5 +1,6 @@
+---
 en:
   helpers:
     application:
       rescue_record_not_found:
-        invalid_parameters: "Invalid parameters. "
+        invalid_parameters: ! 'Invalid parameters. '

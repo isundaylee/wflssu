@@ -1,5 +1,6 @@
+---
 en:
   helpers:
     sessions:
       insufficient_privilege:
-        insufficient_privilege: "Insufficient privilege. "
+        insufficient_privilege: ! 'Insufficient privilege. '

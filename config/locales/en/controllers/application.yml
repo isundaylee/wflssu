@@ -1,4 +1,5 @@
+---
 en:
   application:
     set_locale:
-      flash_success: "You have successfully changed to locale to %{locale_name}. "
+      flash_success: ! 'You have successfully changed to locale to %{locale_name}. '

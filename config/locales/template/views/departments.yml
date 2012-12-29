@@ -1,0 +1,20 @@
+template:
+  departments:
+    new: 
+      title: 
+      form_submit: 
+    form: 
+      form_name_placeholder: 
+    edit: 
+      title: 
+      form_submit: 
+    index: 
+      title: 
+      no_departments: 
+      column_id: 
+      column_name: 
+      column_actions: 
+      action_edit: 
+      action_show_members: 
+      action_new_member: 
+      create_new_department: 

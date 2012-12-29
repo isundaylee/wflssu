@@ -1,5 +1,6 @@
+---
 zh:
   helpers:
     sessions:
       insufficient_privilege:
-        insufficient_privilege: "权限不足。"
+        insufficient_privilege: 权限不足。

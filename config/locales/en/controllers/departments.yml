@@ -1,6 +1,7 @@
+---
 en:
   departments:
     create:
-      flash_success: "You have successfully created the department %{name}. "
+      flash_success: ! 'You have successfully created the department %{name}. '
     update:
-      flash_success: "Successfully updated information for department %{name}. "
+      flash_success: ! 'Successfully updated information for department %{name}. '

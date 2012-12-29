@@ -1,7 +1,8 @@
+---
 zh:
   activerecord:
     models:
-      shortlog: "日志"
+      shortlog: 日志
     attributes:
       shortlog:
-        content: "内容"
+        content: 内容

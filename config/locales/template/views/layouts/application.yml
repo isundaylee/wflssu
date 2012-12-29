@@ -1,0 +1,14 @@
+template:
+  layouts:
+    application:
+      title: 
+      logo_text: 
+      login: 
+      copyright: 
+      welcome: 
+      features: 
+      departments: 
+      members: 
+      logout: 
+      confirm_logout: 
+      search_form_query_placeholder: 

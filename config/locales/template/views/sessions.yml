@@ -1,0 +1,7 @@
+template:
+  sessions:
+    new:
+      title: 
+      form_id_placeholder: 
+      form_password_placeholder: 
+      form_submit: 
