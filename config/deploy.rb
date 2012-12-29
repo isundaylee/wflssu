@@ -47,11 +47,16 @@ namespace :deploy do
   task :symlink_database do 
     run "cd #{current_path}; ln -s #{shared_path}/db/production.sqlite3 #{release_path}/db/production.sqlite3"
   end
-
-  desc "precompile the assets"
-  task :precompile_assets, :roles => :web, :except => { :no_release => true } do
-    run "cd #{current_path}; rm -rf public/assets/*"
-    run "cd #{current_path}; RAILS_ENV=production bundle exec rake assets:precompile"
+  
+  namespace :assets do
+    task :precompile, :roles => :web, :except => { :no_release => true } do
+      from = source.next_revision(current_revision)
+      if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
+        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
+      else
+        logger.info "Skipping asset pre-compilation because there were no asset changes"
+      end
+    end
   end
 end
 
