@@ -43,7 +43,7 @@
         </td> 
         <td>
           <%= link_to t('.action_show'), member_path(member), class: 'btn btn-mini' %>
-          <% if signed_in_as_vice_president? %>
+          <% if signed_in_as_vice_dpresident?(member.department) %>
             <%= link_to t('.action_edit'), edit_member_path(member), class: 'btn btn-mini' %>
             <%= link_to t('.action_delete'), member_path(member), method: :delete, confirm: t('.confirm_delete', name: member.name), class: 'btn btn-mini btn-dangerous' %>
           <% end %>

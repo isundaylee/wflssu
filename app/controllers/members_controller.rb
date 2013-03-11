@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   QRCODE_DEFAULT_SIZE = 150
 
   around_filter :rescue_record_not_found
-  before_filter :require_vice_president, only: [:new, :create, :edit, :upate, :destroy]
+  before_filter :require_vice_president, only: [:new, :create, :destroy]
   before_filter :require_membership, only: [:index]
 
   def new
@@ -34,10 +34,15 @@ class MembersController < ApplicationController
 
   def edit
     @member = Member.find(params[:id])
+
+    require_vice_dpresident(@member.department)
   end
 
   def update
     @member = Member.find(params[:id])
+
+    department = @member.department 
+    require_vice_dpresident(department) 
 
     is_current = true if params[:id].to_i == current_member.id
     new_privilege = params[:member][:privilege].to_i
