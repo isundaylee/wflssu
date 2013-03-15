@@ -1,0 +1,9 @@
+---
+zh:
+  events:
+    create:
+      flash_success: !!null 
+    update:
+      flash_success: !!null 
+    destroy:
+      flash_success: !!null 

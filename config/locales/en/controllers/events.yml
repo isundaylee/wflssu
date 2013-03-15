@@ -1,0 +1,9 @@
+---
+en:
+  events:
+    create:
+      flash_success: ! 'You have successfully created the event %{title}. '
+    update:
+      flash_success: ! 'You have successfully updated the event %{title}. '
+    destroy:
+      flash_success: ! 'You have successfully deleted the event %{title}. '

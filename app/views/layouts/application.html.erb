@@ -28,6 +28,9 @@
                 <% if signed_in_as_vice_president? %>
                   <li><%= link_to t('.departments'), departments_path %></li>
                 <% end %>
+                <% if signed_in? %>
+                  <li><%= link_to t('.events'), events_path %></li>
+                <% end %>
                 <li><%= link_to t('.members'), members_path %></li>
               </ul>
             </li>

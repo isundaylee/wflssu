@@ -1,6 +1,8 @@
 template:
-  departments:
+  events:
     create:
       flash_success: 
     update:
+      flash_success: 
+    destroy:
       flash_success: 

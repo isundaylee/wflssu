@@ -1,7 +1,0 @@
----
-zh:
-  departments:
-    create:
-      flash_success: 您已成功创建部门 %{name}。
-    update:
-      flash_success: 您已成功更新 %{name} 的部门信息。

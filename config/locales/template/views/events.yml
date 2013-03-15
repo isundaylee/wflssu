@@ -1,0 +1,22 @@
+template:
+  events:
+    new: 
+      title: 
+      form_submit: 
+    form: 
+      form_title_placeholder: 
+      form_memo_placeholder:
+      form_date_placeholder:
+    edit: 
+      title: 
+      form_submit: 
+    index: 
+      title: 
+      no_events: 
+      column_title: 
+      column_date: 
+      column_actions: 
+      action_edit: 
+      create_new_event: 
+      action_delete: 
+      confirm_delete: 

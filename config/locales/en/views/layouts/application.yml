@@ -11,6 +11,7 @@ en:
       features: Features
       departments: Departments
       members: Members
+      events: Events
       logout: Logout
       confirm_logout: ! 'Do you really want to log out? '
       search_form_query_placeholder: ! 'Search for members here. '

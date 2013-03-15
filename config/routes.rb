@@ -1,6 +1,7 @@
 Su::Application.routes.draw do
-
-  get "shortlog/destroy"
+  
+  resources :events, only: [:index, :new, :create, :edit, :update, :destroy] do
+  end
 
   resource :session, only: [:new, :create, :destroy] do 
   end

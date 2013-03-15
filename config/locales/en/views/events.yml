@@ -1,0 +1,23 @@
+---
+en:
+  events:
+    new:
+      title: New Event
+      form_submit: Create Event
+    form:
+      form_title_placeholder: Event title.
+      form_memo_placeholder: Event memo.
+      form_date_placeholder: Event date.
+    edit:
+      title: Edit Event
+      form_submit: Update Event
+    index:
+      title: Events
+      no_events: There are currently no events.
+      column_title: Title
+      column_date: Date
+      column_actions: Actions
+      action_edit: Edit
+      create_new_event: Create New Event
+      action_delete: Delete
+      confirm_delete: ! 'Do you really want to delete the event %{title}? '

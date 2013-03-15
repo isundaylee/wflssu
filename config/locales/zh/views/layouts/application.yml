@@ -10,6 +10,7 @@ zh:
       features: 功能
       departments: 部门信息
       members: 成员信息
+      events: !!null 
       logout: 登出
       confirm_logout: 你真的想登出么？
       search_form_query_placeholder: 由此搜索成员信息

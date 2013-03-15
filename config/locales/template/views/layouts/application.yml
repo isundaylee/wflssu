@@ -9,6 +9,7 @@ template:
       features: 
       departments: 
       members: 
+      events:
       logout: 
       confirm_logout: 
       search_form_query_placeholder: 

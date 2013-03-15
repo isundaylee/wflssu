@@ -1,0 +1,23 @@
+---
+zh:
+  events:
+    new:
+      title: !!null 
+      form_submit: !!null 
+    form:
+      form_title_placeholder: !!null 
+      form_memo_placeholder: !!null 
+      form_date_placeholder: !!null 
+    edit:
+      title: !!null 
+      form_submit: !!null 
+    index:
+      title: !!null 
+      no_events: !!null 
+      column_title: !!null 
+      column_date: !!null 
+      column_actions: !!null 
+      action_edit: !!null 
+      create_new_event: !!null 
+      action_delete: !!null 
+      confirm_delete: !!null 

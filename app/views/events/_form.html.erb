@@ -1,0 +1,11 @@
+<%= render('error_messages', errors: event.errors.full_messages) %>
+
+<%= form_for(event, builder: MainFormBuilder, html: {class: 'form-regular'}) do |f| %>
+
+  <%= f.text_field :title, placeholder: t('.form_title_placeholder') %>
+  <%= f.text_field :on_date, placeholder: t('.form_date_placeholder') %>
+  <%= f.text_area :memo, placeholder: t('.form_memo_placeholder') %>
+
+  <%= f.submit submit_text %>
+
+<% end %>
