@@ -1,0 +1,6 @@
+template:
+  departments:
+    create:
+      flash_success: 
+    update:
+      flash_success: 
