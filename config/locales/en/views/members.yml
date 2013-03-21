@@ -49,7 +49,7 @@ en:
       form_phone_number_placeholder: ! 'Phone number. '
       form_email_placeholder: ! 'Email address. '
       form_qq_placeholder: ! 'QQ. '
-      form_birthday_placeholder: ! 'Birthday, format DD/MM/YYYY. '
+      form_birthday_placeholder: ! 'Birthday, format YYYY-MM-DD. '
       form_secondary_school_placeholder: ! 'Secondary school. '
       form_code_number_placeholder: ! 'ID. '
       form_memo_placeholder: ! 'Profile memo. '

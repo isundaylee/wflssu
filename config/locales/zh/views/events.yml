@@ -7,7 +7,7 @@ zh:
     form:
       form_title_placeholder: 活动名称
       form_memo_placeholder: 活动备注
-      form_date_placeholder: 活动日期
+      form_date_placeholder: 活动日期，格式为 YYYY-MM-DD
     edit:
       title: 编辑活动
       form_submit: 更新活动信息

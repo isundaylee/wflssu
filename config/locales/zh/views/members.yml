@@ -49,7 +49,7 @@ zh:
       form_phone_number_placeholder: 电话
       form_email_placeholder: 电子邮箱
       form_qq_placeholder: QQ
-      form_birthday_placeholder: 生日，格式为 DD/MM/YYYY
+      form_birthday_placeholder: 生日，格式为 YYYY-MM-DD
       form_secondary_school_placeholder: 初中学校
       form_code_number_placeholder: ID
       form_memo_placeholder: 档案

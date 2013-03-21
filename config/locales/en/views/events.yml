@@ -7,7 +7,7 @@ en:
     form:
       form_title_placeholder: Event title.
       form_memo_placeholder: Event memo.
-      form_date_placeholder: Event date.
+      form_date_placeholder: Event date, format YYYY-MM-DD.
     edit:
       title: Edit Event
       form_submit: Update Event
