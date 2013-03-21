@@ -1,0 +1,10 @@
+---
+en:
+  activerecord:
+    models:
+      event: Event
+    attributes:
+      event:
+        title: Title
+        on_date: Date
+        memo: Memo

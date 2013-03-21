@@ -1,0 +1,10 @@
+---
+zh:
+  activerecord:
+    models:
+      event: 活动
+    attributes:
+      event:
+        title: 标题
+        on_date: 日期
+        memo: 备注

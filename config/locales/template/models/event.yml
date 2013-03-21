@@ -1,0 +1,9 @@
+template:
+  activerecord:
+    models:
+      event: 
+    attributes:
+      event:
+        title: 
+        on_date: 
+        memo: 
