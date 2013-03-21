@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   attr_accessible :memo, :on_date, :title
 
-  has_many :attendences
+  has_many :attendences, dependent: :destroy
 
   validates :title, presence: true, length: {in: 2..20}
   validates :on_date, presence: true

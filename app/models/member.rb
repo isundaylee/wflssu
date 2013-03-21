@@ -2,8 +2,8 @@ class Member < ActiveRecord::Base
   attr_accessible :admission_year, :birthday, :class_number, :code_number, :department_id, :email, :gender, :memo, :name, :password_digest, :phone_number, :qq, :remember_token, :secondary_school, :password, :password_confirmation, :privilege
 
   belongs_to :department
-  has_many :shortlogs
-  has_many :attendences
+  has_many :shortlogs, dependent: :destroy 
+  has_many :attendences, dependent: :destroy
 
   EMAIL_REGEXP = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
   DATE_REGEXP = /[0-9]{8,8}/i
