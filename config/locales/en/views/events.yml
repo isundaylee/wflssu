@@ -20,4 +20,5 @@ en:
       action_edit: Edit
       create_new_event: Create New Event
       action_delete: Delete
+      action_attend: Attend
       confirm_delete: ! 'Do you really want to delete the event %{title}? '

@@ -3,6 +3,7 @@ class Member < ActiveRecord::Base
 
   belongs_to :department
   has_many :shortlogs
+  has_many :attendences
 
   EMAIL_REGEXP = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
   DATE_REGEXP = /[0-9]{8,8}/i
@@ -54,6 +55,21 @@ class Member < ActiveRecord::Base
   def has_privilege_of?(privilege)
     self.privilege >= privilege
   end
+
+  def attend(event)
+    attendence = Attendence.new
+
+    attendence.member = self
+    attendence.event = event
+    attendence.state = Attendence::PENDING_STATE
+
+    attendence.save
+  end
+
+  def has_attended?(event)
+    self.attendences.map { |a| a.event }.include?(event)
+  end
+
 
   private
 

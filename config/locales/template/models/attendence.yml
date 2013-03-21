@@ -1,0 +1,14 @@
+template:
+  activerecord:
+    models:
+      attendence: 
+    attributes:
+      attendence:
+        member: 
+        event: 
+        state: 
+  models:
+    attendence:
+      state_pending: 
+      state_accepted: 
+      state_rejected: 

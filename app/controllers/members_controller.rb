@@ -42,7 +42,8 @@ class MembersController < ApplicationController
     @member = Member.find(params[:id])
 
     department = @member.department 
-    require_vice_dpresident(department) 
+
+    return insufficient_privilege unless signed_in_as_vice_dpresident?(department)
 
     is_current = true if params[:id].to_i == current_member.id
     new_privilege = params[:member][:privilege].to_i

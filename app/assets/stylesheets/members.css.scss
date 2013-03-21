@@ -15,21 +15,21 @@
   margin-top: 25px; 
 }
 
-.members-show-shortlog-time {
+.members-show-shortlog-time, .members-show-attendence-date {
   font-size: 10px; 
   color: gray;
 }
 
-.members-show-shortlog-delete {
+.members-show-shortlog-delete, .members-show-attendence-state, .members-show-attendence-action {
   float: right;
   margin-right: 5px;
 }
 
-#members-show-shortlogs {
+#members-show-shortlogs, #members-show-attendences {
   padding-top: 10px;
 }
 
-.members-show-shortlog-none {
+.members-show-shortlog-none, .members-show-attendence-none {
   color: gray;
   text-align: center;
   padding-top: 10px;

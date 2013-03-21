@@ -1,6 +1,16 @@
 Su::Application.routes.draw do
   
+  resources :attendences, only: [:destroy] do
+    member do
+      get 'accept'
+      get 'reject'
+    end 
+  end
+
   resources :events, only: [:index, :new, :create, :edit, :update, :destroy] do
+    member do
+      get 'attend'
+    end
   end
 
   resource :session, only: [:new, :create, :destroy] do 

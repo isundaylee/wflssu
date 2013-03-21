@@ -7,3 +7,6 @@ en:
       flash_success: ! 'You have successfully updated the event %{title}. '
     destroy:
       flash_success: ! 'You have successfully deleted the event %{title}. '
+    attend:
+      already_attended: ! 'You have already taken attendence of the event %{title}. '
+      flash_success: ! 'You have successfully taken attendence of the event %{title}. '

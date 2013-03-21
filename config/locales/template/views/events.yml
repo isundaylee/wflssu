@@ -19,4 +19,5 @@ template:
       action_edit: 
       create_new_event: 
       action_delete: 
+      action_attend: 
       confirm_delete: 

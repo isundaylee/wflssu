@@ -27,10 +27,17 @@ en:
       field_email_address: Email Address
       field_qq: QQ
       profile_memo: Profile Memo
+      attendences: Attendences
       logs: Logs
       no_logs: ! 'There are no logs yet for this member. '
+      no_attendences: ! 'There are no attendences yet for this member. '
       confirm_delete_log: ! 'Do you really want to delete the log? '
       edit_member_profile: Edit Member Profile
+      delete_log: Delete
+      delete_attendence: Delete
+      accept_attendence: Accept
+      reject_attendence: Reject
+      confirm_delete_attendence: ! 'Do you really want to delete the attendence? '
     search:
       title: Search Result
     form:

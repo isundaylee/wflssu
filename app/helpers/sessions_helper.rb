@@ -24,6 +24,8 @@ module SessionsHelper
     true
   end
 
+  # require methods now return true if redirected
+
   def require_membership
     insufficient_privilege unless signed_in?
   end
@@ -49,11 +51,9 @@ module SessionsHelper
     @current_member ||= Member.find_by_remember_token(cookies[:remember_token])
   end
 
-  private 
-
-    def insufficient_privilege
-      flash[:error] = I18n.t('helpers.sessions.insufficient_privilege.insufficient_privilege')
-      redirect_to root_url
-    end
+  def insufficient_privilege
+    flash[:error] = I18n.t('helpers.sessions.insufficient_privilege.insufficient_privilege')
+    redirect_to root_url
+  end
 
 end

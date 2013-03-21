@@ -18,11 +18,14 @@
 
     <% @events.each do |event| %>
       <tr>
-        <td style="width: 10%; "><%= event.title %></td>
+        <td style="width: 40%; "><%= event.title %></td>
         <td><%= event.on_date %></td>
-        <td style="width: 25%; ">
-          <%= link_to t('.action_edit'), edit_event_path(event), class: 'btn btn-mini' %>
-          <%= link_to t('.action_delete'), event_path(event), method: :delete, confirm: t('.confirm_delete', title: event.title), class: 'btn btn-mini btn-dangerous' %>
+        <td style="width: 20%; ">
+          <% if signed_in_as_vice_president? %>
+            <%= link_to t('.action_edit'), edit_event_path(event), class: 'btn btn-mini' %>
+            <%= link_to t('.action_delete'), event_path(event), method: :delete, confirm: t('.confirm_delete', title: event.title), class: 'btn btn-mini btn-dangerous' %>
+          <% end %>
+          <%= link_to t('.action_attend'), attend_event_path(event), class: 'btn btn-mini' %>
         </td>
       </tr>
     <% end %>

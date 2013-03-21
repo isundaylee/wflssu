@@ -26,10 +26,17 @@ template:
       field_email_address: 
       field_qq: 
       profile_memo: 
+      attendences: 
       logs: 
       no_logs: 
+      no_attendences:
       confirm_delete_log: 
       edit_member_profile: 
+      delete_log: 
+      delete_attendence:
+      accept_attendence: 
+      reject_attendence: 
+      confirm_delete_attendence:
     search:
       title: 
     form:

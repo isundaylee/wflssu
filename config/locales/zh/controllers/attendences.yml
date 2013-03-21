@@ -1,0 +1,9 @@
+---
+zh:
+  attendences:
+    destroy:
+      flash_success: !!null 
+    accept:
+      flash_success: !!null 
+    reject:
+      flash_success: !!null 

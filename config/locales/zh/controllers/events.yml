@@ -7,3 +7,6 @@ zh:
       flash_success: !!null 
     destroy:
       flash_success: !!null 
+    attend:
+      already_attended: !!null 
+      flash_success: !!null 

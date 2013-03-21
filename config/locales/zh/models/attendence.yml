@@ -1,0 +1,15 @@
+---
+zh:
+  activerecord:
+    models:
+      attendence: !!null 
+    attributes:
+      attendence:
+        member: !!null 
+        event: !!null 
+        state: !!null 
+  models:
+    attendence:
+      state_pending: !!null 
+      state_accepted: !!null 
+      state_rejected: !!null 

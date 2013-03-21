@@ -20,4 +20,5 @@ zh:
       action_edit: !!null 
       create_new_event: !!null 
       action_delete: !!null 
+      action_attend: !!null 
       confirm_delete: !!null 

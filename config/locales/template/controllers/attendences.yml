@@ -1,0 +1,8 @@
+template:
+  attendences:
+    destroy:
+      flash_success: 
+    accept: 
+      flash_success:
+    reject: 
+      flash_success:

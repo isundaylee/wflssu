@@ -1,0 +1,15 @@
+---
+en:
+  activerecord:
+    models:
+      attendence: Attendences
+    attributes:
+      attendence:
+        member: Member
+        event: Event
+        state: State
+  models:
+    attendence:
+      state_pending: Pending
+      state_accepted: Accepted
+      state_rejected: Rejected

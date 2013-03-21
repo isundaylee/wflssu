@@ -1,0 +1,9 @@
+---
+en:
+  attendences:
+    destroy:
+      flash_success: ! 'You have successfully deleted an attendence of %{name}. '
+    accept:
+      flash_success: ! 'You have successfully accepted an attendence of %{name}. '
+    reject:
+      flash_success: ! 'You have successfully rejected an attendence of %{name}. '

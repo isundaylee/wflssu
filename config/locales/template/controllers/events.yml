@@ -6,3 +6,6 @@ template:
       flash_success: 
     destroy:
       flash_success: 
+    attend:
+      already_attended: 
+      flash_success:
