@@ -32,6 +32,7 @@ class EventsController < ApplicationController
 
   def new
     @event = Event.new
+    @event.on_date = Date.today
   end
 
   def create
