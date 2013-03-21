@@ -15,6 +15,7 @@ template:
       no_events: 
       column_title: 
       column_date: 
+      column_memo: 
       column_actions: 
       action_edit: 
       create_new_event: 

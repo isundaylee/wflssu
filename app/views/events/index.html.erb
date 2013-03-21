@@ -13,13 +13,15 @@
     <tr>
       <th><%= t('.column_title') %></th>
       <th><%= t('.column_date') %></th>
+      <th><%= t('.column_memo') %></th>
       <th><%= t('.column_actions') %></th>
     </tr>
 
     <% @events.each do |event| %>
       <tr>
-        <td style="width: 40%; "><%= event.title %></td>
+        <td style="width: 20%; "><%= event.title %></td>
         <td><%= event.on_date %></td>
+        <td><%= markdown event.memo %></td>
         <td style="width: 20%; ">
           <% if signed_in_as_vice_president? %>
             <%= link_to t('.action_edit'), edit_event_path(event), class: 'btn btn-mini' %>

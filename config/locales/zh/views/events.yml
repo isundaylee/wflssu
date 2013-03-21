@@ -16,6 +16,7 @@ zh:
       no_events: 目前尚无任何活动。
       column_title: 活动名称
       column_date: 活动日期
+      column_memo: 活动备注
       column_actions: 操作
       action_edit: 编辑
       create_new_event: 创建新活动

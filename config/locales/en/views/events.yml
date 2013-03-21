@@ -16,6 +16,7 @@ en:
       no_events: There are currently no events.
       column_title: Title
       column_date: Date
+      column_memo: Memo
       column_actions: Actions
       action_edit: Edit
       create_new_event: Create New Event
