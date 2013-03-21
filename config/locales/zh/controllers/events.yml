@@ -2,13 +2,13 @@
 zh:
   events:
     create:
-      flash_success: !!null 
+      flash_success: 您创建了活动 %{title}。
     update:
-      flash_success: !!null 
+      flash_success: 您更新了活动 %{title} 的信息。
     destroy:
-      flash_success: !!null 
+      flash_success: 您删除了活动 %{title}。
     attend:
-      already_attended: !!null 
-      flash_success: !!null 
+      already_attended: 您已经为活动 %{title} 签到了。
+      flash_success: 您成功为活动 %{title} 签到了。
     all_attend:
-      flash_success: !!null 
+      flash_success: 您成功为活动 %{title} 进行了全员签到。

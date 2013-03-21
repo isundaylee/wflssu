@@ -27,17 +27,17 @@ zh:
       field_email_address: 电子邮箱
       field_qq: QQ
       profile_memo: 档案
-      attendences: !!null 
+      attendences: 签到
       logs: 日志
       no_logs: 目前该成员尚无日志信息。
-      no_attendences: !!null 
+      no_attendences: 目前该成员尚无签到信息。
       confirm_delete_log: 您真的想删除此条日志么？
       edit_member_profile: 编辑成员信息
-      delete_log: !!null 
-      delete_attendence: !!null 
-      accept_attendence: !!null 
-      reject_attendence: !!null 
-      confirm_delete_attendence: !!null 
+      delete_log: 删除
+      delete_attendence: 删除
+      accept_attendence: 批准
+      reject_attendence: 驳回
+      confirm_delete_attendence: 您确定要删除此签到信息么？
     search:
       title: 搜索结果
     form:

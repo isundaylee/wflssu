@@ -2,24 +2,24 @@
 zh:
   events:
     new:
-      title: !!null 
-      form_submit: !!null 
+      title: 新活动
+      form_submit: 创建活动
     form:
-      form_title_placeholder: !!null 
-      form_memo_placeholder: !!null 
-      form_date_placeholder: !!null 
+      form_title_placeholder: 活动名称
+      form_memo_placeholder: 活动备注
+      form_date_placeholder: 活动日期
     edit:
-      title: !!null 
-      form_submit: !!null 
+      title: 编辑活动
+      form_submit: 更新活动信息
     index:
-      title: !!null 
-      no_events: !!null 
-      column_title: !!null 
-      column_date: !!null 
-      column_actions: !!null 
-      action_edit: !!null 
-      create_new_event: !!null 
-      action_delete: !!null 
-      action_attend: !!null 
-      action_all_attend: !!null 
-      confirm_delete: !!null 
+      title: 活动列表
+      no_events: 目前尚无任何活动。
+      column_title: 活动名称
+      column_date: 活动日期
+      column_actions: 操作
+      action_edit: 编辑
+      create_new_event: 创建新活动
+      action_delete: 删除
+      action_attend: 签到
+      action_all_attend: 全员签到
+      confirm_delete: 您确定要删除活动 %{title} 么？

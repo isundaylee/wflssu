@@ -2,8 +2,8 @@
 zh:
   attendences:
     destroy:
-      flash_success: !!null 
+      flash_success: 您删除了 %{name} 的一条签到信息。
     accept:
-      flash_success: !!null 
+      flash_success: 您批准了 %{name} 的一条签到信息。
     reject:
-      flash_success: !!null 
+      flash_success: 您驳回了 %{name} 的一条签到信息。

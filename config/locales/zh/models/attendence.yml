@@ -2,14 +2,14 @@
 zh:
   activerecord:
     models:
-      attendence: !!null 
+      attendence: 签到
     attributes:
       attendence:
-        member: !!null 
-        event: !!null 
-        state: !!null 
+        member: 成员
+        event: 活动
+        state: 状态
   models:
     attendence:
-      state_pending: !!null 
-      state_accepted: !!null 
-      state_rejected: !!null 
+      state_pending: 待审核
+      state_accepted: 已批准
+      state_rejected: 已驳回
