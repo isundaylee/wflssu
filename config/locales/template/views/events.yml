@@ -20,4 +20,5 @@ template:
       create_new_event: 
       action_delete: 
       action_attend: 
+      action_all_attend: 
       confirm_delete: 

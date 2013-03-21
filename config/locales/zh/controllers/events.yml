@@ -10,3 +10,5 @@ zh:
     attend:
       already_attended: !!null 
       flash_success: !!null 
+    all_attend:
+      flash_success: !!null 

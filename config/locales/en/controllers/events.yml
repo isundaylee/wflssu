@@ -10,3 +10,6 @@ en:
     attend:
       already_attended: ! 'You have already taken attendence of the event %{title}. '
       flash_success: ! 'You have successfully taken attendence of the event %{title}. '
+    all_attend:
+      flash_success: ! 'You have successfully made all members take attendence of
+        the event %{title}. '

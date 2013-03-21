@@ -1,7 +1,16 @@
 class EventsController < ApplicationController
 
-  before_filter :require_vice_president, only: [:create, :new, :edit, :update, :destroy]
+  before_filter :require_vice_president, only: [:create, :new, :edit, :update, :destroy, :all_attend]
   before_filter :require_membership, only: [:index, :attend]
+
+  def all_attend
+    event = Event.find(params[:id])
+    Member.all.each do |member|
+      member.attend(event)
+    end
+    flash[:success] = I18n.t('events.all_attend.flash_success', title: event.title)
+    redirect_back
+  end
 
   def attend
     event = Event.find(params[:id])

@@ -24,6 +24,7 @@
           <% if signed_in_as_vice_president? %>
             <%= link_to t('.action_edit'), edit_event_path(event), class: 'btn btn-mini' %>
             <%= link_to t('.action_delete'), event_path(event), method: :delete, confirm: t('.confirm_delete', title: event.title), class: 'btn btn-mini btn-dangerous' %>
+            <%= link_to t('.action_all_attend'), all_attend_event_path(event), class: 'btn btn-mini' %>
           <% end %>
           <%= link_to t('.action_attend'), attend_event_path(event), class: 'btn btn-mini' %>
         </td>

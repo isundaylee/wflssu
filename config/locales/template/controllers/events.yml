@@ -9,3 +9,5 @@ template:
     attend:
       already_attended: 
       flash_success:
+    all_attend:
+      flash_success: 

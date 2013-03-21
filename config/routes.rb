@@ -10,6 +10,7 @@ Su::Application.routes.draw do
   resources :events, only: [:index, :new, :create, :edit, :update, :destroy] do
     member do
       get 'attend'
+      get 'all_attend'
     end
   end
 
