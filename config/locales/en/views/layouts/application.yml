@@ -9,6 +9,7 @@ en:
         All rights reserved. '
       welcome: Welcome, %{name}
       features: Features
+      notifications: Notifications
       departments: Departments
       members: Members
       events: Events

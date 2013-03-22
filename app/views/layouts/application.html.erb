@@ -34,6 +34,17 @@
                 <li><%= link_to t('.members'), members_path %></li>
               </ul>
             </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= t('.notifications') %>
+                <%= "(#{current_member.notifications.count})" if current_member.notifications.count > 0 %>
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <% current_member.notifications.each do |n| %>
+                  <li><%= link_to n.content, '#' %></li>
+                <% end %>
+              </ul>
+            </li>
             <li><%= link_to t('.logout'), session_path, method: :delete, confirm: t('.confirm_logout') %></li>
             <%= form_tag search_members_path, method: 'get', class: 'navbar-search' do %>
               <%= text_field_tag 'query', '', class: 'search-query', placeholder: t('.search_form_query_placeholder') %>
