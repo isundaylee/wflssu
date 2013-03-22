@@ -1,5 +1,13 @@
 Su::Application.routes.draw do
   
+  get "notifications/visit"
+
+  resources :notifications, only: [] do
+    member do
+      get 'visit'
+    end
+  end
+
   resources :attendences, only: [:destroy] do
     member do
       get 'accept'

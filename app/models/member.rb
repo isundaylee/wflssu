@@ -71,6 +71,10 @@ class Member < ActiveRecord::Base
     self.attendences.map { |a| a.event }.include?(event)
   end
 
+  def unread_notifications_count
+    self.notifications.select { |n| n.state == Notification::UNREAD_STATE }.count
+  end
+
 
   private
 
