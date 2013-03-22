@@ -5,5 +5,7 @@ zh:
       flash_success: 您删除了 %{name} 的一条签到信息。
     accept:
       flash_success: 您批准了 %{name} 的一条签到信息。
+      notification: 您在 %{event} 的签到已被批准。
     reject:
       flash_success: 您驳回了 %{name} 的一条签到信息。
+      notification: 您在 %{event} 的签到已被驳回。

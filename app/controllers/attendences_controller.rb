@@ -10,6 +10,12 @@ class AttendencesController < ApplicationController
     name = attendence.member.name
     attendence.accept
 
+    # send notification to the affected member
+    attendence.member.notifications.create(
+      content: I18n.t('attendences.accept.notification', event: attendence.event.title), 
+      link: member_path(attendence.member)
+    )
+
     flash[:success] = I18n.t('attendences.accept.flash_success', name: name)
     redirect_back
   end
@@ -22,6 +28,12 @@ class AttendencesController < ApplicationController
 
     name = attendence.member.name
     attendence.reject
+
+    # send notification to the affected member
+    attendence.member.notifications.create(
+      content: I18n.t('attendences.reject.notification', event: attendence.event.title), 
+      link: member_path(attendence.member)
+    )
 
     flash[:success] = I18n.t('attendences.reject.flash_success', name: name)
     redirect_back

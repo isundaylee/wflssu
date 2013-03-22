@@ -4,5 +4,7 @@ template:
       flash_success: 
     accept: 
       flash_success:
+      notification: 
     reject: 
       flash_success:
+      notification: 

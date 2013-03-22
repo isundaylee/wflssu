@@ -5,5 +5,7 @@ en:
       flash_success: ! 'You have successfully deleted an attendence of %{name}. '
     accept:
       flash_success: ! 'You have successfully accepted an attendence of %{name}. '
+      notification: ! 'Your attendence of event %{event} has been accepted. '
     reject:
       flash_success: ! 'You have successfully rejected an attendence of %{name}. '
+      notification: ! 'Your attendence of event %{event} has been rejected. '
