@@ -10,6 +10,7 @@ en:
       welcome: Welcome, %{name}
       features: Features
       notifications: Notifications
+      no_notifications: ! 'You have no unread notifications. '
       departments: Departments
       members: Members
       events: Events

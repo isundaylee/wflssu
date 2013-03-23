@@ -44,6 +44,9 @@
                   <% next unless n.state == Notification::UNREAD_STATE %>
                   <li><%= link_to n.content, visit_notification_path(n) %></li>
                 <% end %>
+                <% if current_member.unread_notifications_count == 0 %>
+                  <li><%= link_to t('.no_notifications'), '#' %></li>
+                <% end %>
               </ul>
             </li>
             <li><%= link_to t('.logout'), session_path, method: :delete, confirm: t('.confirm_logout') %></li>
