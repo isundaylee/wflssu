@@ -10,6 +10,18 @@ describe Department do
     expect(Department.new(name: nil)).to have(1).errors_on(:name)
   end
 
+  it "is valid with a name 1 char long" do
+    expect(Department.new(name: '*')).to be_valid
+  end
+
+  it "is invalid with a empty name" do
+    expect(Department.new(name: '')).to have(1).errors_on(:name)
+  end
+
+  it "is valid with a name 50 chars long" do
+    expect(Department.new(name: '*' * 50)).to be_valid
+  end
+
   it "is invalid with a name more than 50 chars" do
     expect(Department.new(name: '*' * 51)).to have(1).errors_on(:name)
   end
