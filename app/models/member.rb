@@ -31,6 +31,10 @@ class Member < ActiveRecord::Base
   PRESIDENT_PRIVILEGE = 25
   ADMINISTRATOR_PRIVILEGE = 100
 
+  UNKNOWN_GENDER = 0
+  MALE_GENDER = 1
+  FEMALE_GENDER = 2
+
   has_secure_password
 
   validates :name, presence: true, length: {in: 2..10}
@@ -41,10 +45,11 @@ class Member < ActiveRecord::Base
   validates :gender, presence: true, inclusion: {in: GENDERS.keys, message: I18n.t('models.member.validation_message_is_invalid')}
   validates :qq, allow_blank: true, length: {in: 5..15}, numericality: {only_integer: true}
   validates_associated :department
-  validates :secondary_school, allow_blank: true, length: {in: 1..100}
+  validates :secondary_school, allow_blank: true, length: {in: 2..100}
   validates :code_number, presence: true, length: {is: 7}, numericality: {only_integer: true}, uniqueness: true
   validate :code_number_is_valid
   validates :memo, allow_blank: true, length: {maximum: 2000} 
+  validates :department, presence: true
 
   validates :password, length: {in: 6..30, if: :password_changed?}
   validates :password_confirmation, presence: {if: :password_changed?}
@@ -105,7 +110,7 @@ class Member < ActiveRecord::Base
         self.shortlogs.create(content: "Position Change: #{PRIVILEGES[old]} -> #{PRIVILEGES[now]}")
       end
 
-      if self.department_id_changed? 
+      if self.department_id_changed?
         old = self.department_id_was
         now = self.department_id
 

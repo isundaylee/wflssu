@@ -1,9 +1,9 @@
 class Notification < ActiveRecord::Base
-  attr_accessible :content, :link, :member_id
+  attr_accessible :content, :state, :link, :member_id
 
   belongs_to :member
 
-  before_validation :set_unread
+  after_initialize :set_unread
 
   STATES = {
     0 => 'unread', 
@@ -23,4 +23,5 @@ class Notification < ActiveRecord::Base
     def set_unread
       self.state = Notification::UNREAD_STATE if self.new_record?
     end
+
 end

@@ -21,6 +21,10 @@ class Attendence < ActiveRecord::Base
 
   validates :event_id, uniqueness: {scope: :member_id}
 
+  after_initialize do
+    self.state = PENDING_STATE if self.new_record?    
+  end
+
   def accept
     self.state = ACCEPTED_STATE
     self.save
