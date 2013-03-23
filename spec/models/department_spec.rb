@@ -2,9 +2,8 @@ require 'spec_helper'
 
 describe Department do
 
-  it "is valid if all restrictions hold" do
-    department = Department.new(name: 'IT Department', )
-    expect(department).to be_valid
+  it "has a valid factory" do
+    expect(build(:department)).to be_valid
   end
 
   it { should validate_presence_of :name }
@@ -14,8 +13,8 @@ describe Department do
   it { should have_many(:members) }
 
   it "returns the correct list of deparment names" do
-    a = Department.create(name: 'IT')
-    b = Department.create(name: 'Activities')
+    a = create(:department)
+    b = create(:department)
     expect(Department.names).to eq({a.id => a.name, b.id => b.name})
   end
 end
