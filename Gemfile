@@ -64,7 +64,6 @@ group :test do
   gem "database_cleaner", "~> 0.9.1"
   gem "launchy", "~> 2.2.0"
   gem "shoulda"
-end
-
-group :test do
+  gem "spork", "> 0.9.0"
+  gem "guard-spork"
 end
