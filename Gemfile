@@ -60,6 +60,7 @@ group :test do
   gem "capybara", "~> 2.0.2"
   gem "database_cleaner", "~> 0.9.1"
   gem "launchy", "~> 2.2.0"
+  gem "shoulda"
 end
 
 group :test do
