@@ -53,6 +53,9 @@ group :development, :test do
   gem "rspec-rails", ">= 2.8.1"
   gem "factory_girl_rails", "~> 4.2.0"
   gem "guard-rspec", "~> 2.4.0"
+
+  # rb-fsevent is guard-rspec dependency
+  gem 'rb-fsevent', '~> 0.9'
 end
 
 group :test do
