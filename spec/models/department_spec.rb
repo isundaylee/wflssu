@@ -1,32 +1,19 @@
 require 'spec_helper'
 
 describe Department do
+
   it "is valid if all restrictions hold" do
     department = Department.new(name: 'IT Department', )
     expect(department).to be_valid
   end
 
-  it "is invalid without a name" do
-    expect(Department.new(name: nil)).to have(1).errors_on(:name)
-  end
+  it { should validate_presence_of :name }
 
-  it "is valid with a name 1 char long" do
-    expect(Department.new(name: '*')).to be_valid
-  end
+  it { should ensure_length_of(:name).is_at_most 50 }
 
-  it "is invalid with a empty name" do
-    expect(Department.new(name: '')).to have(1).errors_on(:name)
-  end
+  it { should have_many(:members) }
 
-  it "is valid with a name 50 chars long" do
-    expect(Department.new(name: '*' * 50)).to be_valid
-  end
-
-  it "is invalid with a name more than 50 chars" do
-    expect(Department.new(name: '*' * 51)).to have(1).errors_on(:name)
-  end
-
-  it "returns the correct lists of deparment names" do
+  it "returns the correct list of deparment names" do
     a = Department.create(name: 'IT')
     b = Department.create(name: 'Activities')
     expect(Department.names).to eq({a.id => a.name, b.id => b.name})
