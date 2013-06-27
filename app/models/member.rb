@@ -8,6 +8,8 @@ class Member < ActiveRecord::Base
 
   scope :active, -> { where(active: true) }
 
+  after_initialize :default_values
+
   EMAIL_REGEXP = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
   DATE_REGEXP = /[0-9]{8,8}/i
 
@@ -113,6 +115,10 @@ class Member < ActiveRecord::Base
 
         self.shortlogs.create(content: "Department Change: #{Department.find(old).name} -> #{Department.find(now).name}")
       end
+    end
+
+    def default_values
+      self.active = true
     end
 
 end
