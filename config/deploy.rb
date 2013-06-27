@@ -6,7 +6,7 @@ set :application, "wflssu"
 # If you aren't deploying to /u/apps/#{application} on the target
 # servers (which is the default), you can specify the actual location
 # via the :deploy_to variable:
-set :deploy_to, "/home/ubuntu/wflssu"
+set :deploy_to, "/root/wflssu"
 
 # If you aren't using Subversion to manage your source code, specify
 # your SCM below:
@@ -14,9 +14,9 @@ set :scm, :git
 set :repository, "git@github.com:isundaylee/wflssu.git"
 set :branch, "master"
 
-set :user, 'ubuntu'
-server "204.236.142.15", :app, :web, :db, :primary => true
-ssh_options[:keys] = ["#{ENV['HOME']}/.ssh/lovenancy.pem"]
+set :user, 'root'
+server "ljh.me", :app, :web, :db, :primary => true
+# ssh_options[:keys] = ["#{ENV['HOME']}/.ssh/lovenancy.pem"]
 ssh_options[:forward_agent] = true
 
 # Rails 3 support
