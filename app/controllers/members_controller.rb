@@ -66,10 +66,10 @@ class MembersController < ApplicationController
 
   def index
     if params[:department_id]
-      @members = Member.where({department_id: params[:department_id]}).all
+      @members = Member.active.where({department_id: params[:department_id]}).all
       @department = Department.find(params[:department_id])
     else
-      @members = Member.all
+      @members = Member.active.all
     end
   end
 

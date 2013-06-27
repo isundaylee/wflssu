@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 
   def all_attend
     event = Event.find(params[:id])
-    Member.all.each do |member|
+    Member.active.all.each do |member|
       member.attend(event)
     end
     flash[:success] = I18n.t('events.all_attend.flash_success', title: event.title)
