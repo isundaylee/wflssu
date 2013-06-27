@@ -20,6 +20,8 @@ zh:
         privilege: 权限
   models:
     member:
+      active: 本届成员
+      inactive: 非本届成员
       validation_message_is_invalid: 无效。
       gender_unknown: 未知
       gender_male: 男

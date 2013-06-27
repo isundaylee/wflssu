@@ -1,5 +1,5 @@
 class Member < ActiveRecord::Base
-  attr_accessible :admission_year, :birthday, :class_number, :code_number, :department_id, :email, :gender, :memo, :name, :password_digest, :phone_number, :qq, :remember_token, :secondary_school, :password, :password_confirmation, :privilege
+  attr_accessible :admission_year, :birthday, :class_number, :code_number, :department_id, :email, :gender, :memo, :name, :password_digest, :phone_number, :qq, :remember_token, :secondary_school, :password, :password_confirmation, :privilege, :active
 
   belongs_to :department
   has_many :shortlogs, dependent: :destroy 
@@ -118,7 +118,7 @@ class Member < ActiveRecord::Base
     end
 
     def default_values
-      self.active = true
+      self.active = true if self.new_record? 
     end
 
 end

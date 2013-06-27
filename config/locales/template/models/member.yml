@@ -19,6 +19,8 @@ template:
         privilege: 
   models:
     member:
+      active: 
+      inactive: 
       validation_message_is_invalid: 
       gender_unknown: 
       gender_male: 

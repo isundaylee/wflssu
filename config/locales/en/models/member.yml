@@ -20,6 +20,8 @@ en:
         privilege: Privilege
   models:
     member:
+      active: Active
+      inactive: Inactive
       validation_message_is_invalid: ! 'is invalid. '
       gender_unknown: Unknown
       gender_male: Male

@@ -2,6 +2,7 @@
 
 <%= form_for(member, builder: MainFormBuilder, html: {class: 'form-regular'}) do |f| %>
 
+  <%= f.collection_select :active, {true: t('models.member.active'), false: t('models.member.inactive')}, :first, :last %>
   <%= f.text_field :name, placeholder: t('.form_name_placeholder') %>
   <%= f.password_field :password, placeholder: t('.form_password_placeholder') %>
   <%= f.password_field :password_confirmation, placeholder: t('.form_password_confirmation_placeholder') %>
