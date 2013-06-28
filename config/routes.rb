@@ -1,5 +1,10 @@
 Su::Application.routes.draw do
-  
+
+  # match "sms/dispatchA", to: 'sms#dispatchA', via: [:post]
+  post "sms/send", to: 'sms#send_message'
+  get "sms/index"
+  post "sms/transfer"
+
   get "notifications/visit"
 
   resources :notifications, only: [] do

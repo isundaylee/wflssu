@@ -1,0 +1,6 @@
+---
+zh:
+  sms:
+    index:
+      title: 短信
+      balance_message: 您的短信余量还有 %{balance} 条

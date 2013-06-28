@@ -1,0 +1,6 @@
+---
+en:
+  sms:
+    index:
+      title: SMS
+      balance_message: You have %{balance} messages left to send

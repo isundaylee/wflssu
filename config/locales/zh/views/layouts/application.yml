@@ -2,6 +2,7 @@
 zh:
   layouts:
     application:
+      sms: 短信
       title: 武汉外国语学校学生会
       logo_text: WFLSSU
       login: 登陆

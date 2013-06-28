@@ -2,6 +2,7 @@
 en:
   layouts:
     application:
+      sms: SMS
       title: WFLS Students' Union
       logo_text: WFLSSU
       login: Login

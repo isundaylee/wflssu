@@ -1,6 +1,7 @@
 template:
   layouts:
     application:
+      sms: 
       title: 
       logo_text: 
       login: 

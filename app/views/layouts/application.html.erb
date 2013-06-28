@@ -30,6 +30,7 @@
                 <% end %>
                 <% if signed_in? %>
                   <li><%= link_to t('.events'), events_path %></li>
+                  <li><%= link_to t('.sms'), sms_index_path %></li>
                 <% end %>
                 <li><%= link_to t('.members'), members_path %></li>
               </ul>
