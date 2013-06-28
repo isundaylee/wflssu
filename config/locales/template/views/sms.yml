@@ -3,3 +3,5 @@ template:
     index:
       title: 
       balance_message: 
+      amount_to_transfer: 
+      submit_transfer: 

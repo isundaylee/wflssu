@@ -1,0 +1,6 @@
+---
+en:
+  sms:
+    transfer:
+      flash_insufficient_balance: You do not have enough sms balance. 
+      flash_success: You have successfully given %{amount} sms balance to %{target}. 

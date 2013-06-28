@@ -1,0 +1,6 @@
+---
+zh:
+  sms:
+    transfer:
+      flash_insufficient_balance: 您没有足够的短信余量。
+      flash_success: 您成功给予了 %{target} %{amount} 条短信余量。

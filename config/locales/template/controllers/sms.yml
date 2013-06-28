@@ -1,0 +1,5 @@
+template:
+  sms: 
+    transfer:
+      flash_insufficient_balance:
+      flash_success: 

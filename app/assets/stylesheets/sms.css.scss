@@ -1,3 +1,24 @@
 // Place all the styles related to the sms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#sms_index_transfer_amount {
+  width: 93%; 
+  margin-left: 2%; 
+}
+
+#sms_index_transfer_form {
+  margin-bottom: 0; 
+}
+
+#sms_index_transfer_target {
+  width: 100%; 
+}
+
+#sms_index_transfer_submit {
+  width: 100%; 
+}
+
+#sms_index_transfer_form_wrapper {
+  width: 100%; 
+}

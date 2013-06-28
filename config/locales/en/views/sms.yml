@@ -4,3 +4,5 @@ en:
     index:
       title: SMS
       balance_message: You have %{balance} messages left to send
+      amount_to_transfer: The amount you want to transfer.
+      submit_transfer: Transfer

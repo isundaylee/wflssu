@@ -4,5 +4,28 @@
 
 <div class='center'><%= t('.balance_message', balance: current_member.sms_balance.to_i) %></div>
 
-
 <br />
+
+<div class="row">
+  <div class="span10 offset1">
+    <div class="well">
+      <%= form_tag(sms_transfer_path, class: 'form-inline', id: 'sms_index_transfer_form') do %>
+        <table id="sms_index_transfer_form_wrapper">
+          <tr>
+            <td>
+              <%= select_tag(:target, options_for_select(Member.all.map { |m| [m.name, m.id] }), class: 'input-small', id: 'sms_index_transfer_target') %>
+            </td>
+            <td>
+              <%= text_field_tag(:amount, nil, placeholder: t('.amount_to_transfer'), id: 'sms_index_transfer_amount', class: 'input-small') %>
+            </td>
+            <td>
+              <%= submit_tag(t('.submit_transfer'), class: 'btn', id: 'sms_index_transfer_submit') %>
+            </td>
+          </tr>
+        </table>
+
+
+      <% end %>
+    </div>
+  </div>
+</div>

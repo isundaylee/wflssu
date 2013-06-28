@@ -49,6 +49,7 @@ class Member < ActiveRecord::Base
   validates :code_number, presence: true, length: {is: 7}, numericality: {only_integer: true}, uniqueness: true
   validate :code_number_is_valid
   validates :memo, allow_blank: true, length: {maximum: 2000} 
+  validates :sms_balance, numericality: {only_integer: true}
 
   validates :password, length: {in: 6..30, if: :password_changed?}
   validates :password_confirmation, presence: {if: :password_changed?}
