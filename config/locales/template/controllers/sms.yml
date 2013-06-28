@@ -3,3 +3,11 @@ template:
     transfer:
       flash_insufficient_balance:
       flash_success: 
+    send_message:
+      flash_content_empty:
+      flash_message_too_long: 
+      flash_no_targets: 
+      flash_too_many_targets: 
+      flash_insufficient_balance: 
+      flash_api_error:
+      flash_success: 

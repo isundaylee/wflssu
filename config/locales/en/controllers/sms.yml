@@ -2,5 +2,13 @@
 en:
   sms:
     transfer:
-      flash_insufficient_balance: You do not have enough sms balance. 
-      flash_success: You have successfully given %{amount} sms balance to %{target}. 
+      flash_insufficient_balance: You do not have enough SMS balance.
+      flash_success: You have successfully given %{amount} SMS balance to %{target}.
+    send_message:
+      flash_content_empty: The content of the message seems to be empty.
+      flash_message_too_long: The length of the content is too long.
+      flash_no_targets: You have not designated recipients for this message.
+      flash_too_many_targets: You cannot send to so many recipients at the same time.
+      flash_insufficient_balance: You do not have enough SMS balance.
+      flash_api_error: Message sending failed. Please contact system administrator.
+      flash_success: You have successfully sent the message.

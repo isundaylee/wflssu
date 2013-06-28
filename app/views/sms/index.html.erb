@@ -29,3 +29,33 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="span10 offset1">
+    <div class="well">
+      <%= form_tag(sms_send_path, id: 'sms_index_send_form') do %>
+        <%= text_area_tag(:content, @content, placeholder: t('.content_to_send'), id: 'sms_index_send_content') %>
+        <%= submit_tag(t('.submit_send'), class: 'btn', id: 'sms_index_send_submit') %>
+
+        <table id="sms_index_send_target" class="table table-bordered table-centered">
+          <tr>
+            <th><%= t('.member_name') %></th>
+            <th><%= t('.member_department') %></th>
+            <th><%= t('.member_phone_number') %></th>
+            <th><%= t('.member_is_target') %></th>
+          </tr>
+          <% Member.all(order: :department_id).each do |m| %>
+            <% next unless m.phone_number %>
+            <tr>
+              <td><%= m.name %></td>
+              <td><%= m.department.name %></td>
+              <td><%= m.phone_number %></td>
+              <td><%= check_box_tag 'targets[]', m.id, @targets && @targets.include?(m.id.to_s), class: 'inline' %></td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+
+    </div>
+  </div>
+</div>

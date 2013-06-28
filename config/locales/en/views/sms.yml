@@ -6,3 +6,9 @@ en:
       balance_message: You have %{balance} messages left to send
       amount_to_transfer: The amount you want to transfer.
       submit_transfer: Transfer
+      content_to_send: The content of SMS
+      submit_send: Send
+      member_name: Name
+      member_department: Department
+      member_phone_number: Phone Number
+      member_is_target: Send To

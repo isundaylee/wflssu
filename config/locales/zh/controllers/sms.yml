@@ -4,3 +4,11 @@ zh:
     transfer:
       flash_insufficient_balance: 您没有足够的短信余量。
       flash_success: 您成功给予了 %{target} %{amount} 条短信余量。
+    send_message:
+      flash_content_empty: 短信内容不能为空。
+      flash_message_too_long: 短信内容长度超出系统限制。
+      flash_no_targets: 您未指定短信接受者。
+      flash_too_many_targets: 您同时发送的短信数量超过了系统限制。
+      flash_insufficient_balance: 您短信发送余量不足。
+      flash_api_error: 短信发送失败，请联系系统管理员。
+      flash_success: 短信发送成功。

@@ -5,3 +5,9 @@ template:
       balance_message: 
       amount_to_transfer: 
       submit_transfer: 
+      content_to_send: 
+      submit_send: 
+      member_name:
+      member_department:
+      member_phone_number:
+      member_is_target: 

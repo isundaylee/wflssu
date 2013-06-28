@@ -119,6 +119,7 @@ class Member < ActiveRecord::Base
     end
 
     def default_values
+      self.sms_balance = 0 if self.new_record?
       self.active = true if self.new_record? 
     end
 
