@@ -38,24 +38,31 @@
         <%= submit_tag(t('.submit_send'), class: 'btn', id: 'sms_index_send_submit') %>
 
         <table id="sms_index_send_target" class="table table-bordered table-centered">
+
           <tr>
             <th><%= t('.member_name') %></th>
             <th><%= t('.member_department') %></th>
             <th><%= t('.member_phone_number') %></th>
             <th><%= t('.member_is_target') %></th>
           </tr>
-          <% Member.all(order: :department_id).each do |m| %>
-            <% next unless m.phone_number %>
-            <tr>
-              <td><%= m.name %></td>
-              <td><%= m.department.name %></td>
-              <td><%= m.phone_number %></td>
-              <td><%= check_box_tag 'targets[]', m.id, @targets && @targets.include?(m.id.to_s), class: 'inline' %></td>
-            </tr>
+
+          <% Department.all.each do |department| %>
+              <tr>
+                <td class="sms_index_send_target_divider" colspan="4"></td>
+              </tr>
+              <% department.members.each do |m| %>
+                <% next unless m.phone_number %>
+                <tr>
+                  <td><%= m.name %></td>
+                  <td><%= m.department.name %></td>
+                  <td><%= m.phone_number %></td>
+                  <td><%= check_box_tag 'targets[]', m.id, @targets && @targets.include?(m.id.to_s), class: 'inline' %></td>
+                </tr>
+              <% end %>
           <% end %>
+
         </table>
       <% end %>
-
     </div>
   </div>
 </div>
