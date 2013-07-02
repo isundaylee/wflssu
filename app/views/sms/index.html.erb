@@ -6,7 +6,15 @@
 
 <br />
 
-<div class="row">
+<div class="row" id="sms_index_transfer_placeholder">
+  <div class="span10 offset1">
+    <div class="well center">
+      <%= link_to t('.click_to_transfer'), '#', id: 'sms_index_transfer_trigger' %>
+    </div>
+  </div>
+</div>
+
+<div class="row" id="sms_index_transfer_panel">
   <div class="span10 offset1">
     <div class="well">
       <%= form_tag(sms_transfer_path, class: 'form-inline', id: 'sms_index_transfer_form') do %>

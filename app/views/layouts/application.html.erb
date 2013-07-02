@@ -3,7 +3,6 @@
 <head>
   <title><%= t('.title') %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body class="<%= "#{params[:controller]}_#{params[:action]}" %>">
@@ -85,13 +84,15 @@
 
   <footer class="footer">
     <div class="container">
-      <p class="center"><small><%= t('.copyright') %><small></p>
+      <p class="center"><small><%= t('.copyright') %></small></p>
     </div>
   </footer>
 
   <div class="container">
     <%= debug(params) if Rails.env.development? %>
   </div>
+
+  <%= javascript_include_tag "application" %>
 
 </body>
 </html>

@@ -2,6 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#sms_index_transfer_panel {
+  display: none; 
+}
+
 #sms_index_transfer_amount {
   width: 93%; 
   margin-left: 2%; 
