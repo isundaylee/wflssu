@@ -58,7 +58,7 @@
               <tr>
                 <td class="sms_index_send_target_divider" colspan="4"></td>
               </tr>
-              <% department.members.each do |m| %>
+              <% department.members.active.each do |m| %>
                 <% next unless m.phone_number %>
                 <tr>
                   <td><%= m.name %></td>
