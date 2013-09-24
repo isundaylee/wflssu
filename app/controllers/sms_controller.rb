@@ -68,5 +68,25 @@ class SmsController < ApplicationController
   private
 
     def post_message(targets, content)
+      require 'digest/md5'
+      require 'open-uri'
+
+      base_url = "www.smsbao.com"
+
+      url = URI::HTTP.build(
+        host: base_url,
+        path: '/sms',
+        query: 
+          {
+            u: APP_CONFIG['smsbao_username'], 
+            p: Digest::MD5.hexdigest(APP_CONFIG['smsbao_password']), 
+            m: targets.map { |id| Member.find(id).phone_number } .join(','),
+            c: content
+          }.to_query
+      ).to_s
+
+      result = open(url).read.lines.first.to_i
+
+      result == 0 ? nil : result
     end
 end
