@@ -58,13 +58,19 @@
               <tr>
                 <td class="sms_index_send_target_divider" colspan="4"></td>
               </tr>
+
+              <td><%= t('.all_members') %></td>
+              <td><%= department.name %></td>
+              <td></td>
+              <td><%= check_box_tag 'departments[]', department.id, @departments && @departments.includes?(department.id.to_s), class: 'inline department_checkbox', id: "department_#{department.id}_checkbox" %></td>
+
               <% department.members.active.each do |m| %>
                 <% next unless m.phone_number %>
                 <tr>
                   <td><%= m.name %></td>
                   <td><%= m.department.name %></td>
                   <td><%= m.phone_number %></td>
-                  <td><%= check_box_tag 'targets[]', m.id, @targets && @targets.include?(m.id.to_s), class: 'inline' %></td>
+                  <td><%= check_box_tag 'targets[]', m.id, @targets && @targets.include?(m.id.to_s), class: "inline department_#{m.department.id}_member" %></td>
                 </tr>
               <% end %>
           <% end %>

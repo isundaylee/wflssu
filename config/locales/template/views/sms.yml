@@ -2,6 +2,7 @@ template:
   sms:
     index:
       title: 
+      all_members: 
       balance_message: 
       amount_to_transfer: 
       submit_transfer: 

@@ -3,6 +3,7 @@ en:
   sms:
     index:
       title: SMS
+      all_members: All Members
       balance_message: You have %{balance} messages left to send
       amount_to_transfer: The amount you want to transfer.
       submit_transfer: Transfer

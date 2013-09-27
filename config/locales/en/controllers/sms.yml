@@ -12,4 +12,5 @@ en:
       flash_insufficient_balance: You do not have enough SMS balance.
       flash_api_error: Message sending failed. Please contact system administrator.
       flash_success: You have successfully sent the message.
-      smsbao_balance_insufficient_notification: The SMSBao account linked needs to be recharged.
+      smsbao_balance_insufficient_notification: The SMSBao account linked needs to
+        be recharged.

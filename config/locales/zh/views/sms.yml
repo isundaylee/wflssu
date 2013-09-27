@@ -3,6 +3,7 @@ zh:
   sms:
     index:
       title: 短信
+      all_members: 所有成员
       balance_message: 您的短信余量还有 %{balance} 条
       amount_to_transfer: 您想给予对方的短信数量
       submit_transfer: 给予
