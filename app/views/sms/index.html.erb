@@ -62,7 +62,7 @@
               <td><%= t('.all_members') %></td>
               <td><%= department.name %></td>
               <td></td>
-              <td><%= check_box_tag 'departments[]', department.id, @departments && @departments.includes?(department.id.to_s), class: 'inline department_checkbox', id: "department_#{department.id}_checkbox" %></td>
+              <td><%= check_box_tag 'departments[]', department.id, @departments && @departments.include?(department.id.to_s), class: 'inline department_checkbox', id: "department_#{department.id}_checkbox" %></td>
 
               <% department.members.active.each do |m| %>
                 <% next unless m.phone_number %>

@@ -73,6 +73,7 @@ class SmsController < ApplicationController
 
     @content = params[:content]
     @targets = params[:targets]
+    @departments = params[:departments]
 
     render 'index'
   end
