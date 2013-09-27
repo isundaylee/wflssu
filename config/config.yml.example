@@ -1,2 +1,3 @@
-smsbao_username: 
-smsbao_password: 
+smsbao_username: username_here
+smsbao_password: password_here
+smsbao_balance_insufficient_error_code: 41
