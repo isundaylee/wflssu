@@ -46,6 +46,18 @@ class SmsController < ApplicationController
       error = post_message(targets, content)
 
       if error
+        if error == APP_CONFIG['smsbao_balance_insufficient_error_code']
+          # SMSBao Account balance insufficient
+          Member.where('privilege = ?', Member::ADMINISTRATOR_PRIVILEGE).each do |m|
+            # Notify all administrators
+
+            m.notifications.create(
+              content: I18n.t('sms.send_message.smsbao_balance_insufficient_notification'), 
+              link: sms_index_path
+            )
+          end
+        end
+
         Rails.logger.error("SMS failure: #{error}")
         flash[:error] = I18n.t('sms.send_message.flash_api_error')
       else

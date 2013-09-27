@@ -12,3 +12,4 @@ zh:
       flash_insufficient_balance: 您短信发送余量不足。
       flash_api_error: 短信发送失败，请联系系统管理员。
       flash_success: 短信发送成功。
+      smsbao_balance_insufficient_notification: SMSBao 短信平台帐号余额不足。

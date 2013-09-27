@@ -11,3 +11,4 @@ template:
       flash_insufficient_balance: 
       flash_api_error:
       flash_success: 
+      smsbao_balance_insufficient_notification: 
