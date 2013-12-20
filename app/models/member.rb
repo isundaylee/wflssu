@@ -2,7 +2,7 @@ class Member < ActiveRecord::Base
   attr_accessible :admission_year, :birthday, :class_number, :code_number, :department_id, :email, :gender, :memo, :name, :password_digest, :phone_number, :qq, :remember_token, :secondary_school, :password, :password_confirmation, :privilege, :active
 
   belongs_to :department
-  has_many :shortlogs, dependent: :destroy 
+  has_many :shortlogs, dependent: :destroy
   has_many :attendences, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
@@ -19,12 +19,16 @@ class Member < ActiveRecord::Base
     2 => 'female'
   }
 
+  UNKNOWN_GENDER = 0
+  MALE_GENDER = 1
+  FEMALE_GENDER = 2
+
   PRIVILEGES = {
-    0 => 'member', 
-    10 => 'vice_dpresident', 
-    15 => 'dpresident', 
-    20 => 'vice_president', 
-    25 => 'president', 
+    0 => 'member',
+    10 => 'vice_dpresident',
+    15 => 'dpresident',
+    20 => 'vice_president',
+    25 => 'president',
     100 => 'administrator'
   }
 
@@ -38,7 +42,7 @@ class Member < ActiveRecord::Base
   has_secure_password
 
   validates :name, presence: true, length: {in: 2..10}
-  validates :admission_year, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 2011, less_than_or_equal_to: 9999} 
+  validates :admission_year, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 2011, less_than_or_equal_to: 9999}
   validates :class_number, presence: true, numericality: {only_integer: true, greater_than_or_equal_to: 1, less_than_or_equal_to: 20}
   validates :phone_number, allow_blank: true, length: {in: 8..11}, numericality: {only_integer: true}
   validates :email, allow_blank: true, length: {in: 5..50}, format: {with: EMAIL_REGEXP}
@@ -48,7 +52,7 @@ class Member < ActiveRecord::Base
   validates :secondary_school, allow_blank: true, length: {in: 1..100}
   validates :code_number, presence: true, length: {is: 7}, numericality: {only_integer: true}, uniqueness: true
   validate :code_number_is_valid
-  validates :memo, allow_blank: true, length: {maximum: 2000} 
+  validates :memo, allow_blank: true, length: {maximum: 2000}
   validates :sms_balance, numericality: {only_integer: true}
 
   validates :password, length: {in: 6..30, if: :password_changed?}
@@ -92,7 +96,7 @@ class Member < ActiveRecord::Base
       end
     end
 
-    def password_changed? 
+    def password_changed?
       !self.password.blank?
     end
 
@@ -110,7 +114,7 @@ class Member < ActiveRecord::Base
         self.shortlogs.create(content: "Position Change: #{PRIVILEGES[old]} -> #{PRIVILEGES[now]}")
       end
 
-      if self.department_id_changed? 
+      if self.department_id_changed?
         old = self.department_id_was
         now = self.department_id
 
@@ -120,7 +124,7 @@ class Member < ActiveRecord::Base
 
     def default_values
       self.sms_balance = 0 if self.new_record?
-      self.active = true if self.new_record? 
+      self.active = true if self.new_record?
     end
 
 end
