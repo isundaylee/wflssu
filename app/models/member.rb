@@ -20,8 +20,8 @@ class Member < ActiveRecord::Base
   }
 
   UNKNOWN_GENDER = 0
-  MALE_GENDER = 1
-  FEMALE_GENDER = 2
+  MALE_GENDER    = 1
+  FEMALE_GENDER  = 2
 
   PRIVILEGES = {
     0 => 'member',
@@ -32,12 +32,12 @@ class Member < ActiveRecord::Base
     100 => 'administrator'
   }
 
-  MEMBER_PRIVILEGE = 0
+  MEMBER_PRIVILEGE          = 0
   VICE_DPRESIDENT_PRIVILEGE = 10
-  DPRESIDENT_PRIVILEGE = 15
-  VICE_PRESIDENT_PRIVILEGE = 20
-  PRESIDENT_PRIVILEGE = 25
-  ADMINISTRATOR_PRIVILEGE = 100
+  DPRESIDENT_PRIVILEGE      = 15
+  VICE_PRESIDENT_PRIVILEGE  = 20
+  PRESIDENT_PRIVILEGE       = 25
+  ADMINISTRATOR_PRIVILEGE   = 100
 
   has_secure_password
 
