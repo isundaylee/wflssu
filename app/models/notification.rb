@@ -6,11 +6,11 @@ class Notification < ActiveRecord::Base
   before_validation :set_unread
 
   STATES = {
-    0 => 'unread', 
+    0  => 'unread',
     10 => 'read'
   }
 
-  READ_STATE = 10
+  READ_STATE   = 10
   UNREAD_STATE = 0
 
   validates :member, presence: true

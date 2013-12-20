@@ -24,11 +24,11 @@ class Member < ActiveRecord::Base
   FEMALE_GENDER  = 2
 
   PRIVILEGES = {
-    0 => 'member',
-    10 => 'vice_dpresident',
-    15 => 'dpresident',
-    20 => 'vice_president',
-    25 => 'president',
+    0   => 'member',
+    10  => 'vice_dpresident',
+    15  => 'dpresident',
+    20  => 'vice_president',
+    25  => 'president',
     100 => 'administrator'
   }
 
